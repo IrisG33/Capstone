@@ -6,34 +6,60 @@
 <script src="js/form.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
-<script src="js/form1.js"></script>
+<script src="js/form6.js"></script>
 </head>
 <body>	
 <h2>Application Form</h2>
 <h4>Step 6 out of 8</h4>	
 <h4>Assets</h4>	
-  <table align="center">
-        <thead>
-        <tr>
-          <th>Family member name</th>
-          <th>No.</th>
-          <th>Type of asset</th>
-          <th>Calcultation (PHA use)</th>
-          <th>Cash value of asset</th>
-          <th>Anticipated Income</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td><input type="text" name="familyMemberName"></td>
-          <td><input type="text" name="no"></td>
-          <td><input type="text" name="typeOfAsset"></td>
-          <td><input type="text" name="calculation"></td>
-          <td>$<input type="text" name="cashValueOfAsset"></td>
-          <td>$<input type="text" name="anticipatedIncome"></td>
-        </tr>
-        </tbody>
-      </table>
+<div>
+  <table align="center" id='assetTable'>
+    <thead>
+      <tr>
+        <th>Family member name</th>
+        <th>No.</th>
+        <th>Type of asset</th>
+        <th>Calcultation (PHA use)</th>
+        <th>Cash value of asset</th>
+        <th>Anticipated Income</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="familyMemberName"></td>
+        <td><input type="text" name="no"></td>
+        <td><input type="text" name="typeOfAsset"></td>
+        <td><input type="text" name="calculation"></td>
+        <td><input type="text" name="cashValueOfAsset" placeholder="$"></td>
+        <td><input type="text" name="anticipatedIncome" placeholder="$"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="familyMemberName"></td>
+        <td><input type="text" name="no"></td>
+        <td><input type="text" name="typeOfAsset"></td>
+        <td><input type="text" name="calculation"></td>
+        <td><input type="text" name="cashValueOfAsset" placeholder="$"></td>
+        <td><input type="text" name="anticipatedIncome" placeholder="$"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="familyMemberName"></td>
+        <td><input type="text" name="no"></td>
+        <td><input type="text" name="typeOfAsset"></td>
+        <td><input type="text" name="calculation"></td>
+        <td><input type="text" name="cashValueOfAsset" placeholder="$"></td>
+        <td><input type="text" name="anticipatedIncome" placeholder="$"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="familyMemberName"></td>
+        <td><input type="text" name="no"></td>
+        <td><input type="text" name="typeOfAsset"></td>
+        <td><input type="text" name="calculation"></td>
+        <td><input type="text" name="cashValueOfAsset" placeholder="$"></td>
+        <td><input type="text" name="anticipatedIncome" placeholder="$"></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+<div class="left"><a id="removeItem" onclick="removeRow()">Remove item</a>&nbsp;&nbsp;<a id="addAnotherItem" onclick="addRow()">Add another item</a></div>
 </body>
 </html>
