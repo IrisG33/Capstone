@@ -1,0 +1,165 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/p6.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/form.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/p6.js"></script>
+</head>
+<body>	
+<h2>Application Form</h2>	
+<h4>Expected Income Per Year</h4>	
+
+<form id="p6" name="p6" action="p8.html" method="post">
+<div class="element">
+<div class="left">Total annual income: $9999.00</div>
+</div>
+<table align="left" class="fixed" id='assetTable'>
+      <thead>
+      <col width="140px"/>
+      <col width="40px"/>
+      <col width="250px"/>
+      <col width="250px"/>
+      <tr>
+          <th align = "left">Family member name</th>
+          <th align = "left">No.</th>
+          <th align = "left">Type of permission deduction</th>
+          <th align = "left">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+        <col width="140px"/>
+        <col width="40px"/>
+        <col width="250px"/>
+        <col width="250px"/>
+
+        <tr>
+          <td><select name="familyMemberName" >
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size="2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+      </tbody>
+</table>
+
+<div class="element"><hr></div>
+
+<div class="right"><h4>Total pemissible deductions: $<span id="8e">0.00</span></h4></div>
+
+<div class="element">
+<div class="left">If head/spouse/co-head is under 62? </div>
+<div class="right">
+<select name="larger62">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+</div>
+</div>
+<div class="element">
+<div class="left">If head/spouse/co-head is disabled? </div>
+<div class="right">
+<select name="disable">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+</div>
+</div>
+
+<div id="rule1">
+  <div class="element">Medical/disability threshold: <span id="8f">$9999.00 X 0.03 = $299.97</span>
+  </div>
+</div>
+
+<div id="rule4">
+  <div class="element">Total annual unreimbursed disabiity assistance expense: $<span id="annualUnreimbursedDisabExpense"><input type="text" id="8g"></span></div>
+  <div class="element">Maximum disability allowance: (same with above)<span id="8h"></span></div>
+  <div class="element">Earnings possible by disability assistance expense: <span id="8i">$0.00</span></div>
+  <div class="element">Allowable disability assistance expense: <span id="8j">$0.00</span></div>
+  <div class="element">Total annual unreimbursed medical expenses: <span id="8k">$0.00</span></div>
+  <div class="element">Total annual disability assitance and medical expense: <span id="8m">$0.00</span></div>
+  <div class="element">Medical/disability assistance allowance: <span id="8n">$0.00</span></div>
+  <div class="element">Elderly/disability allowance: $<input type="text" id="8p" name="edAllw" value="400.00"></div>
+</div>
+
+<div class="element">Number of dependents: <span id="8q">0</span></div>
+<div class="element">Allowance/dependent: $<input type="text" id="8r" name="allwPerDpdt" value="480.00"></div>
+<div class="element">Dependent allowance: $<span id="8s">0.00</span></div>
+<div class="element">Total annual unreimbursed childcare costs: $<span id="8t">0.00</span></div>
+<div class="element">Total allowance: $<span id="8x">0.00</span></div>
+<div class="element">Adjusted annual income: $<span id="8q">0.00</span></div>
+
+<div class="element"><hr></div>
+
+<h4>Total Tenant Payment (TTP)</h4>	
+<div class="element">Total monthly income: $ <span id="9a">0.00</span></div>
+<div class="element">TTP if based on annual income: $ <span id="9c">0.00</span></div>
+<div class="element">Adjusted monthly income $<span id="9d">0.00</span></div>
+<div class="element">Percentage of adjusted monthly income:<input type="text" id="9e" name="pctOfAdjIncome" value="30%"></div></div>
+<div class="element">TTP if based on adjusted annual income: $ <span id="9f">0.00</span></div>
+<div class="element">Welfare rent per month: $<span id="9g">0.00</span></div>
+<div class="element">Minimum rent: $ <span id="9h">0.00</span></div>
+<div class="element">Enhanced Voucher minimum rent: $ <span id="9i">0.00</span></div>
+<div class="element">TTP: $ <span id="9j">0.00</span></div>
+<div class="element">Most recent TTP: $ <span id="9k">0.00</span></div>
+<div class="element">
+<div class="left">Qualify for minimum rent hardship exemption? </div>
+<div class="right">
+	<input type="radio" name="exemQualify" value="exemYes"><label id="yesLabel">Yes</label>
+	<input type="radio" name="exemQualify" value="exemNo"><label id="noLabel">No</label></div>
+</div>
+</div>
+<br>
+<div class="element">
+<div class="left"><a href="p5.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+</div>
+
+</form>
+</body>
+</html>
