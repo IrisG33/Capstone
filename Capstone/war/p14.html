@@ -1,0 +1,185 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="css/p18.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/form6.js"></script><script src="js/form6.js"></script>  
+</head>
+<body>	
+<h2>Calculation Tool</h2>
+<h4>Step 18 out of 18</h4>	
+
+<h2>Family Self-Sufficiency Program (if not in FSS Program, skip to next section)</h2>	
+
+<form id="p14" name="p14" action="p14.html" method="post">
+
+<div class="element">
+<div class="left"><b>FSS Contract information</b></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(1) Initial start date (mm/yyyy) of contract of participation (FSS enrollment report only)
+</div>
+<div class="right"><input type="text" name="startDate"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(2) Initial end date (mm/yyyy) of contract of participation (FSS enrollment report only)
+</div>
+<div class="right"><input type="text" name="endDate"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(3) Contract date extended to (mm/yyyy) (if applicable)
+</div>
+<div class="right"><input type="text" name="extendDate"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(4) Number of family members with Individual Traning and Services Plan 
+</div>
+<div class="right"><input type="text" name="extendDate"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(5) Did the family receive selection preference because of a FSS related service program participation? (FSS enrollment report only) (Y or N) 
+</div>
+<div class="right">
+	<select name="resultSelect">
+   	<option value="y">Y</option>
+  	<option value="n">N</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left"><b>FSS account information</b></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(1) Current FSS account monthly credit
+</div>
+<div class="right"><input type="text" name="monthCredit" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(2) Current FSS account balance
+</div>
+<div class="right"><input type="text" name="accountBalance" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(3) FSS account amount disbursed to the family (cumulative as of end of reporting period) 
+</div>
+<div class="right"><input type="text" name="disbursement" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left"><b>FSS exit information (FSS Exit Report only)</b></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(1) Did family complete contract of participation? (Y or N) 
+</div>
+<div class="right">
+	<select name="completionofPartipation">
+   	<option value="y">Y</option>
+  	<option value="n">N</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">
+	(2) if (1) is Yes, did family move to homeownership? (Y or N) 
+</div>
+<div class="right">
+	<select name="completionofPartipation">
+   	<option value="y">Y</option>
+  	<option value="n">N</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">
+	(3) if (1) is No, primary reason for exit: 
+</div>
+<div class="right">
+	<input type="checkbox" name="reason" value="lv">Left voluntarily </br>
+	<input type="checkbox" name="reason" value="pmo">Portability move-out </br>
+	<input type="checkbox" name="reason" value="ce">Contract expired but family did not fulfill obligations </br>
+	<input type="checkbox" name="reason" value="atl">Asked to leave program </br>
+	<input type="checkbox" name="reason" value="lbe">Left because essential servie was unavailable </br>
+</div>
+</div>
+
+<h2>Welfare to Work Voucher Program</h2>	
+<div class="element">
+<div class="left"><b>WtW program information</b></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(1) Date (mm/dd/yyyy) Voucher issued (WtW enrollment report only)
+</div>
+<div class="right"><input type="text" name="VoucherstartDate"></div>
+</div>
+
+<div class="element">
+<div class="left">
+	(2) Date (mm/dd/yyyy) of request for lease approval (RFLA) for a unit leased
+</div>
+<div class="right"><input type="text" name="requestDate"></div>
+</div>
+
+<div class="element">
+<div class="left"><b>Welfare to Work exit information (WtW exit report only)</b></div>
+</div>
+
+<div class="element">
+<div class="left">
+		(1) Is the family moving to homeownership? (Y or N)
+</div>
+<div class="right">
+	<select name="familyHomeownership">
+   	<option value="y">Y</option>
+  	<option value="n">N</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">
+	(2) Primary reason for leaving the WtW Voucer program
+</div>
+<div class="right">
+	<input type="checkbox" name="reason4WtW" value="pm">Portability move-out </br>
+	<input type="checkbox" name="reason4WtW" value="fnl">Family no longer needs subsidy </br>
+	<input type="checkbox" name="reason4WtW" value="st">Subsidy terminated for Housing Choice Voucher program violation, other than WtW obligations</br>
+	<input type="checkbox" name="reason4WtW" value="stf">Subsidy terminated for violation of WtW obligations </br>
+	<input type="checkbox" name="reason4WtW" value="fv">Family voluntarily withdrew from Housing Choice Voucher program </br>
+	<input type="checkbox" name="reason4WtW" value="o">Other</br>
+</div>
+</div>
+
+
+<div class="element">
+<div class="left"><div class="right"><a href="p13.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Finish"></div>
+</div>
+
+</form>
+</body>
+</html>
