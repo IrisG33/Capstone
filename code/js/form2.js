@@ -19,6 +19,24 @@
 		$("input[name='totalNumberInHousehold']").prop('disabled', 'true');
 	});
 	
+	//form validation on submit
+	$("#form2").validate({
+		rules: {
+			eligibleEffectiveDate: "required",
+			formerHeadOfHouseholdSSN: "required",
+			lastName1: "required",
+			firstName1: "required",
+			MI1: "required",
+			dateOfBirth1: "required",
+			ageOnEffectiveDateOfAction1: "required",
+			ssn1:"required" 
+			}
+	});
+	
+	
+	
+	
+	
 function html(){
 var html="<div class=\"member\" id=\"member"+num+"\">";
 if(num!=1) html += "<h4>Member "+num+"</h4>";
@@ -29,7 +47,7 @@ html += "<div class=\"right\"><input type=\"text\" name=\"lastName"+num+"\"><\/d
 html += "<\/div>";
 html += "<div class=\"element\">";
 html += "<div class=\"left\">First Name<\/div>";
-html += "<div class=\"right\"><input type=\"text\" name=\"FirstName"+num+"\"><\/div>";
+html += "<div class=\"right\"><input type=\"text\" name=\"firstName"+num+"\"><\/div>";
 html += "<\/div>";
 html += "<div class=\"element\">";
 html += "<div class=\"left\">MI<\/div>";
