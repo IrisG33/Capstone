@@ -1,6 +1,0 @@
-<items>{% for item in items %}
-  <item>
-    <id>{{item.id}}</id>
-    <text>{{item}}</text>
-  </item>{% endfor %}
-</items>
