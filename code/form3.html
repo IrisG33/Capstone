@@ -16,12 +16,12 @@
 <form id="form3" name="form3" action="form4.html" method="post">
 <div class="element">
 <div class="left">Date entered waiting list</div>
-<div class="right"><input type="text" name="agencyName"></div>
+<div class="right"><input type="text" name="dateEnteredWaitingList" class="datepicker"></div>
 </div>
 
 <div class="element">
 <div class="left">Zip code before admission</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="zipCodeBeforeAdmission"></div>
 </div>
 
 <div class="element">
@@ -37,18 +37,8 @@
 <div class="element">
 <div class="left">Does family qualify for admission over the very low-income limit? (vouchers only)</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="veryLowIncomeLimit">
   <option value=""></option>
-  <option value="Yes">Yes</option>
-  <option value="No">No</option>
-</select>
-</div>
-</div>
-
-<div class="element">
-<div class="left">Homeless at admission</div>
-<div class="right">
-<select name="homelessAtAdmission">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -79,30 +69,30 @@
 <h4>Address</h4>	
 <div class="element">
 <div class="left">Number and Street</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="occupiedNumberAndStreet"></div>
 </div>
 <div class="element">
 <div class="left">Apt</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="occupiedApt"></div>
 </div>
 <div class="element">
 <div class="left">City</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="occupiedCity"></div>
 </div>
 <div class="element">
 <div class="left">State</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="occupiedState"></div>
 </div>
 <div class="element">
 <div class="left">Zip</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="occupiedZip"></div>
 </div>
 
 <div class="element">
 <div class="left">Is mailing address?</div>
 <div class="right">
-	<input type="radio" class="correction" name="correction" value="Yes">Yes<br>
-	<input type="radio" class="correction" name="correction" value="No">No</div>
+	<input type="radio" name="isMailingAddress" value="Yes">Yes<br>
+	<input type="radio" name="isMailingAddress" value="No">No</div>
 </div>
 </div>
 
@@ -110,33 +100,33 @@
 <h4>Mailing Address</h4>	
 <div class="element">
 <div class="left">Number and Street</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="mailingNumberAndStreet"></div>
 </div>
 <div class="element">
 <div class="left">Apt</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="mailingApt"></div>
 </div>
 <div class="element">
 <div class="left">City</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="mailingCity"></div>
 </div>
 <div class="element">
 <div class="left">State</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="mailingState"></div>
 </div>
 <div class="element">
 <div class="left">Zip</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="mailingZip"></div>
 </div>
 <div class="element">
 <div class="left">Number of Bedrooms in Unit</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="numberOfBedroomsInUnit"></div>
 </div>
 
 <div class="element">
 <div class="left">Has the PHA identified this unit as an accessible unit? (Public Housing only)</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="PHAIdentifiedUnitAsAccessibleUnit">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -145,7 +135,7 @@
 <div class="element">
 <div class="left">Has the family requested accessibility features? (Public Housing only)</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="familyRequestedAccessibilityFeatures">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -154,7 +144,7 @@
 <div class="element">
 <div class="left">Has the family received requested accessibility features? (Public Housing only)</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="familyReceivedRequestedAccessibilityFeatures">
   <option value="Yes">Yes, fully</option>
   <option value="No">Yes, partially</option>
   <option value="Yes">No,not at all</option>
@@ -167,7 +157,7 @@
 <div class="element">
 <div class="left">Date unit last passed HQS inspection (Section 8 only, except Homeownership and Project-based Vouchers)</div>
 <div class="right">
-<input type="text" name="projectedEffectiveDateOfNextReexamination" class="datepicker">
+<input type="text" name="dateUnitLastPassedHQSInspection" class="datepicker">
 </div>
 </div>
 
@@ -175,7 +165,7 @@
 <div class="element">
 <div class="left">Date of last annual HQS inspection (Section 8 only, except Homeownership and Project-based Vouchers)</div>
 <div class="right">
-<input type="text" name="projectedEffectiveDateOfNextReexamination" class="datepicker">
+<input type="text" name="dateOfLastAnnualHQSInspection" class="datepicker">
 </div>
 </div>
 
@@ -184,12 +174,12 @@
 
 <div class="element">
 <div class="left">Year, unit was built</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="yearUnitWasBuilt"></div>
 </div>
 <div class="element">
 <div class="left">Structure type</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="structureType">
   <option value="Yes">Single family detached</option>
   <option value="No">Semi-detached</option>
   <option value="Yes">Rowhouse/townhouse</option>

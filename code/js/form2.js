@@ -22,14 +22,14 @@
 	//form validation on submit
 	$("#form2").validate({
 		rules: {
-			eligibleEffectiveDate: "required",
-			formerHeadOfHouseholdSSN: "required",
-			lastName1: "required",
-			firstName1: "required",
-			MI1: "required",
-			dateOfBirth1: "required",
-			ageOnEffectiveDateOfAction1: "required",
-			ssn1:"required" 
+			eligibleEffectiveDate: { required: true, maxlength: 10 },
+			formerHeadOfHouseholdSSN: { required: true, maxlength: 10 },
+			lastName1: { required: true, maxlength: 10 },
+			firstName1: { required: true, maxlength: 10 },
+			MI1: { required: true, maxlength: 10 },
+			dateOfBirth1: { required: true, maxlength: 10 },
+			ageOnEffectiveDateOfAction1: { required: true, maxlength: 10 },
+			ssn1:{ required: true, maxlength: 10 } 
 			}
 	});
 	

@@ -29,12 +29,12 @@
 			else { error.insertAfter(element); }
 		},
 		rules: {
-			agencyName: "required",
-			effectiveDateOfAction: "required",
-			dateOfAdmissionToProgram: "required",
-			projectedEffectiveDateOfNextReexamination: "required",
-			projectedDateOfNextFlatRentAnnualUpdate: "required",
-			FSSParticipation: "required",
+			agencyName: { required: true, maxlength: 10 },
+			effectiveDateOfAction: { required: true, maxlength: 10 },
+			dateOfAdmissionToProgram: { required: true, maxlength: 10 },
+			projectedEffectiveDateOfNextReexamination: { required: true, maxlength: 10 },
+			projectedDateOfNextFlatRentAnnualUpdate: { required: true, maxlength: 10 },
+			FSSParticipation: { required: true, maxlength: 10 },
 			phaCode: {
 				required: true,
 				minlength: 5, 
