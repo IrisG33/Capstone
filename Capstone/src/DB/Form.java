@@ -40,10 +40,10 @@ public class Form {
                 //set the Table name here
                 new Insert().go("HUD_PHA_AGENCY_DTLS", tc);
                 
-                
                 ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();    
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_PHA_CODE")));
-                tc2.add(new TableColumns("Integer", request.getParameter("HPTBD_SNO_HOUSEHOLD")));
+                tc2.add(new TableColumns("Integer","1"));
+                //tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HPTBD_SNO_HOUSEHOLD")));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_PRGM")));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_PROJECT_NUM")));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_BLD_NUM")));
@@ -52,7 +52,7 @@ public class Form {
                 int HPTBD_SNO_HOUSEHOLD = new Insert().goAutoIncrement("HUD_PHA_TENANT_BLD_DTLS", tc2);
                 
                 ArrayList<TableColumns> tc3= new ArrayList<TableColumns>();    
-                tc3.add(new TableColumns("Integer", request.getParameter("HPAC_ACTION_TYPE")));
+                tc3.add(new TableColumns("String", request.getParameter("HPAC_ACTION_TYPE")));
                 int HPAC_ACTION_SNO = new Insert().goAutoIncrement("HUD_PHA_ACTION_CODE", tc3);
                 
                 ArrayList<TableColumns> tc4= new ArrayList<TableColumns>();    

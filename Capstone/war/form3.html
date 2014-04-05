@@ -16,18 +16,18 @@
 <form id="form3" name="form3" action="p5.html" method="post">
 <div class="element">
 <div class="left">Date entered waiting list</div>
-<div class="right"><input type="text" name="dateEnteredWaitingList" class="datepicker"></div>
+<div class="right"><input type="text" name="HTD_DATE_WAIT_LIST" class="datepicker"></div>
 </div>
 
 <div class="element">
 <div class="left">Zip code before admission</div>
-<div class="right"><input type="text" name="zipCodeBeforeAdmission"></div>
+<div class="right"><input type="text" name="HTD_ZIP"></div>
 </div>
 
 <div class="element">
 <div class="left">Homeless at admission</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="HTD_HOMELESS_AT_ADMIN">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -37,7 +37,7 @@
 <div class="element">
 <div class="left">Does family qualify for admission over the very low-income limit? (vouchers only)</div>
 <div class="right">
-<select name="veryLowIncomeLimit">
+<select name="HTD_QUALIFY_LOW_INC_LIMIT">
   <option value=""></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
@@ -48,7 +48,7 @@
 <div class="element">
 <div class="left">Continuously assisted under the 1937 Housing Act?</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="HTD_ASSISTED_1937_ACT">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -58,7 +58,7 @@
 <div class="element">
 <div class="left">Is there a HUD approved income targeting disregard?</div>
 <div class="right">
-<select name="homelessAtAdmission">
+<select name="HTD_HUD_APPROVED_INCOME">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -69,7 +69,7 @@
 <h4>Address</h4>	
 <div class="element">
 <div class="left">Number and Street</div>
-<div class="right"><input type="text" name="occupiedNumberAndStreet"></div>
+<div class="right"><input type="text" name="HTUA_UNIT_ADDRESS"></div>
 </div>
 <div class="element">
 <div class="left">Apt</div>
@@ -91,8 +91,8 @@
 <div class="element">
 <div class="left">Is mailing address?</div>
 <div class="right">
-	<input type="radio" name="isMailingAddress" value="Yes">Yes<br>
-	<input type="radio" name="isMailingAddress" value="No">No</div>
+	<input type="radio" name="HTUA_IS_MAILING_ADD_SAME" value="Yes">Yes<br>
+	<input type="radio" name="HTUA_IS_MAILING_ADD_SAME" value="No">No</div>
 </div>
 </div>
 
@@ -100,7 +100,7 @@
 <h4>Mailing Address</h4>	
 <div class="element">
 <div class="left">Number and Street</div>
-<div class="right"><input type="text" name="mailingNumberAndStreet"></div>
+<div class="right"><input type="text" name="HTUA_MAILING_ADDRESS"></div>
 </div>
 <div class="element">
 <div class="left">Apt</div>
@@ -120,13 +120,13 @@
 </div>
 <div class="element">
 <div class="left">Number of Bedrooms in Unit</div>
-<div class="right"><input type="text" name="numberOfBedroomsInUnit"></div>
+<div class="right"><input type="text" name="HTUA_BEDROOM_NUMBER"></div>
 </div>
 
 <div class="element">
 <div class="left">Has the PHA identified this unit as an accessible unit? (Public Housing only)</div>
 <div class="right">
-<select name="PHAIdentifiedUnitAsAccessibleUnit">
+<select name="HTUA_ACCESSIBLE_UNIT">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -135,7 +135,7 @@
 <div class="element">
 <div class="left">Has the family requested accessibility features? (Public Housing only)</div>
 <div class="right">
-<select name="familyRequestedAccessibilityFeatures">
+<select name="HTUA_REQT_ACCESSIBILITY">
   <option value="Yes">Yes</option>
   <option value="No">No</option>
 </select>
@@ -144,7 +144,7 @@
 <div class="element">
 <div class="left">Has the family received requested accessibility features? (Public Housing only)</div>
 <div class="right">
-<select name="familyReceivedRequestedAccessibilityFeatures">
+<select name=" HTUA_RECV_ACCESSIBILITY">
   <option value="Yes">Yes, fully</option>
   <option value="No">Yes, partially</option>
   <option value="Yes">No,not at all</option>
@@ -157,7 +157,7 @@
 <div class="element">
 <div class="left">Date unit last passed HQS inspection (Section 8 only, except Homeownership and Project-based Vouchers)</div>
 <div class="right">
-<input type="text" name="dateUnitLastPassedHQSInspection" class="datepicker">
+<input type="text" name="HTUA_DATE_UNIT_PASSED_HQS" class="datepicker">
 </div>
 </div>
 
@@ -165,7 +165,7 @@
 <div class="element">
 <div class="left">Date of last annual HQS inspection (Section 8 only, except Homeownership and Project-based Vouchers)</div>
 <div class="right">
-<input type="text" name="dateOfLastAnnualHQSInspection" class="datepicker">
+<input type="text" name="HTUA_DATE_UNIT_LAST_ANNUAL_HQS" class="datepicker">
 </div>
 </div>
 
@@ -174,12 +174,12 @@
 
 <div class="element">
 <div class="left">Year, unit was built</div>
-<div class="right"><input type="text" name="yearUnitWasBuilt"></div>
+<div class="right"><input type="text" name="HTUA_BUILT_YEAR"></div>
 </div>
 <div class="element">
 <div class="left">Structure type</div>
 <div class="right">
-<select name="structureType">
+<select name="HTUA_STRUCTURE_TYPE">
   <option value="Yes">Single family detached</option>
   <option value="No">Semi-detached</option>
   <option value="Yes">Rowhouse/townhouse</option>
