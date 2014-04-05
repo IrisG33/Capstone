@@ -7,14 +7,14 @@
 	//rules for display
 	$("#rule2").hide();
 	$("#rule3").hide();
-	$("select[name='HPTBD_PRGM']").on('change', function() {
+	$("select[name='program']").on('change', function() {
 		$("#rule1").hide();
 		$("#rule3").hide();
 		if($(this).val()=="Public Housing") $("#rule1").show();
 		else if($(this).val()=="Vouchers") $("#rule3").show();
     });
 	
-	$("input:radio[name=HTPA_IS_CORRECTED]").click(function() {
+	$("input:radio[name=correction]").click(function() {
 		if($(this).val()=="Yes") $("#rule2").show();
 		else if($(this).val()=="No") $("#rule2").hide();
     });
@@ -41,22 +41,22 @@
 				maxlength: 5
 			},
 			primaryReasonForCorrection:{ 
-				required: { depends: function(element) {return $("input:radio[name=HTPA_IS_CORRECTED]").val() == "Yes";}},
+				required: { depends: function(element) {return $("input:radio[name=correction]").val() == "Yes";}},
 			},
 			projectNumber: {
-				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
+				required: { depends: function(element) {return $("select[name='program']").val() == "Public Housing";}},
 			},
 			buildingNumber: {
-				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
+				required: { depends: function(element) {return $("select[name='program']").val() == "Public Housing";}},
 			},
 			buildingEntranceNumber: {
-				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
+				required: { depends: function(element) {return $("select[name='program']").val() == "Public Housing";}},
 			},
 			unitNumber: {
-				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
+				required: { depends: function(element) {return $("select[name='program']").val() == "Public Housing";}},
 			},
 			specialProgram: {
-				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Vouchers";}},
+				required: { depends: function(element) {return $("select[name='program']").val() == "Vouchers";}},
 			},
 			},
 		messages: {

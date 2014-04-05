@@ -1,6 +1,6 @@
   $( document ).ready(function() {
 	
-	$('input[type=radio][name=HTUA_IS_MAILING_ADD_SAME]').change(function() {
+	$('input[type=radio][name=isMailingAddress]').change(function() {
         if (this.value == 'Yes') {
             $('input[name=mailingNumberAndStreet]').val($('input[name=occupiedNumberAndStreet]').val());
 			$('input[name=mailingApt]').val($('input[name=occupiedApt]').val());

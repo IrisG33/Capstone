@@ -16,18 +16,18 @@
 <form id="form2" name="form2" action="Form?num=2" method="post">
 <div class="element">
 <div class="left">Agency Name</div>
-<div class="right"><input type="text" name="agencyName"></div>
+<div class="right"><input type="text" name="HPAD_AGENCY_NAME"></div>
 </div>
 
 <div class="element">
 <div class="left">PHA Code</div>
-<div class="right"><input type="text" name="phaCode"></div>
+<div class="right"><input type="text" name="HPAD_PHA_CODE"></div>
 </div>
 
 <div class="element">
 <div class="left">Program</div>
 <div class="right">
-<select name="program">
+<select name="HPTBD_PRGM">
   <option value="Public Housing">Public Housing</option>
   <option value="Certificates">Certificates</option>
   <option value="Vouchers">Vouchers</option>
@@ -40,22 +40,22 @@
 <div id="rule1">
 <div class="element">
 <div class="left">Project Number</div>
-<div class="right"><input type="text" name="projectNumber"></div>
+<div class="right"><input type="text" name="HPTBD_PROJECT_NUM"></div>
 </div>
 
 <div class="element">
 <div class="left">Building Number</div>
-<div class="right"><input type="text" name="buildingNumber"></div>
+<div class="right"><input type="text" name="HPTBD_BLD_NUM"></div>
 </div>
 
 <div class="element">
 <div class="left">Building Entrance Number</div>
-<div class="right"><input type="text" name="buildingEntranceNumber"></div>
+<div class="right"><input type="text" name="HPTBD_BLD_ENT_NUM"></div>
 </div>
 
 <div class="element">
 <div class="left">Unit Number</div>
-<div class="right"><input type="text" name="unitNumber"></div>
+<div class="right"><input type="text" name="HPTBD_UNIT_NUM"></div>
 </div>
 </div>
 <!-- end of rule 1 -->
@@ -64,7 +64,7 @@
 <div class="element">
 <div class="left">Type of Action</div>
 <div class="right">
-<select name="typeOfAction">
+<select name="HPAC_ACTION_TYPE">
   <option value="New Admission">New Admission</option>
   <option value="Annual Reexamination">Annual Reexamination</option>
   <option value="Interim Reexamination">Interim Reexamination</option>
@@ -86,15 +86,15 @@
 <div class="element">
 <div class="left">Effective date of Action</div>
 <div class="right">
-<input type="text" name="effectiveDateOfAction" class="datepicker">
+<input type="text" name="HTPA_EFFECTIVE_DATE" class="datepicker">
 </div>
 </div>
 
 <div class="element">
 <div class="left">Correction</div>
 <div class="right">
-	<input type="radio" class="correction" name="correction" value="Yes">Yes<br>
-	<input type="radio" class="correction" name="correction" value="No">No</div>
+	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="Yes">Yes<br>
+	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="No">No</div>
 </div>
 </div>
 
@@ -103,10 +103,10 @@
 <div class="element">
 <div class="left">Primary reason for correction</div>
 <div class="right">
-	<input type="radio" name="primaryReasonForCorrection" value="Family correction of income"><label id="familyCorrectionOfIncome">Family correction of income</label><br>
-	<input type="radio" name="primaryReasonForCorrection" value="Family correction(non-income)">Family correction(non-income)<br>
-	<input type="radio" name="primaryReasonForCorrection" value="PHA correction of family income">PHA correction of family income<br>
-	<input type="radio" name="primaryReasonForCorrection" value="PHA correction(non-income)">PHA correction(non-income)<br>
+	<input type="radio" name="HTPA_IF_CORRECTED" value="Family correction of income"><label id="familyCorrectionOfIncome">Family correction of income</label><br>
+	<input type="radio" name="HTPA_IF_CORRECTED" value="Family correction(non-income)">Family correction(non-income)<br>
+	<input type="radio" name="HTPA_IF_CORRECTED" value="PHA correction of family income">PHA correction of family income<br>
+	<input type="radio" name="HTPA_IF_CORRECTED" value="PHA correction(non-income)">PHA correction(non-income)<br>
 </div>
 </div>
 </div>
@@ -115,29 +115,29 @@
 <div class="element">
 <div class="left">Date of Admission to Program</div>
 <div class="right">
-<input type="text" name="dateOfAdmissionToProgram" class="datepicker">
+<input type="text" name="HTPA_ADMISSION_DATE" class="datepicker">
 </div>
 </div>
 
 <div class="element">
 <div class="left">Projected Effective Date of Next Reexamination</div>
 <div class="right">
-<input type="text" name="projectedEffectiveDateOfNextReexamination" class="datepicker">
+<input type="text" name="HTPA_PROJEFFECTIVE_DATE_REEXAM" class="datepicker">
 </div>
 </div>
 
 <div class="element">
 <div class="left">Projected Date of Next Flat Rent Annual Update</div>
 <div class="right">
-<input type="text" name="projectedDateOfNextFlatRentAnnualUpdate" class="datepicker">
+<input type="text" name="HTPA_PROJ_DATE_FLATRATE_UPDATE" class="datepicker">
 </div>
 </div>
 
 <div class="element">
 <div class="left">FSS Participation now or in the last year</div>
 <div class="right">
-	<input type="radio" name="FSSParticipation" value="Yes"><label id="FSSParticipationYes">Yes</label><br>
-	<input type="radio" name="FSSParticipation" value="No">No</div>
+	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="Yes"><label id="FSSParticipationYes">Yes</label><br>
+	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="No">No</div>
 </div>
 </div>
 
@@ -145,15 +145,20 @@
 <div id="rule3" class="element">
 <div class="left">Special Program</div>
 <div class="right">
-	<input type="radio" name="specialProgram" value="Enhanced Voucher"><label id="enhancedVoucher">Enhanced Voucher</label><br>
-	<input type="radio" name="specialProgram" value="Welfare To Worker Voucher">Welfare to Worker Voucher</div>
+	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Enhanced Voucher"><label id="enhancedVoucher">Enhanced Voucher</label><br>
+	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Welfare To Worker Voucher">Welfare to Worker Voucher</div>
 </div>
 </div>
 <!-- end of rule 3 -->
 
 <div class="element">
-<div class="left">Other Special Programs</div>
-<div class="right"><input type="text" name="otherSpecialPrograms"></div>
+<div class="left">Other Special Programs: Number 01</div>
+<div class="right"><input type="text" name="HTPA_OTHER_SPECIAL_PROGRAMS_1"></div>
+</div>
+
+<div class="element">
+<div class="left">Other Special Programs: Number 02</div>
+<div class="right"><input type="text" name="HTPA_OTHER_SPECIAL_PROGRAMS_2"></div>
 </div>
 
 <div class="element">
