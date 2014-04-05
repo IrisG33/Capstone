@@ -13,6 +13,27 @@ import javax.servlet.http.HttpServletRequest;
 public class Form {
     public boolean form1(HttpServletRequest request){
         try{
+
+                ArrayList<TableColumns> tc= new ArrayList<TableColumns>();    
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_PHA_CODE")));
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_PRGM")));
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_PROJECT_NUM")));
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_BLD_NUM")));
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_BLD_ENT_NUM")));
+                tc.add(new TableColumns("String", request.getParameter("HPTBD_UNIT_NUM")));
+                int HTH_SNO = new Insert().goAutoIncrement("HUD_PHA_TENANT_BLD_DTLS", tc);
+                request.getSession().setAttribute("HTH_SNO", HTH_SNO);
+   
+                new Insert().go("HUD_TENANT_PHA_ACTION", tc);
+        return true;
+        }
+        catch(Exception ex){
+            return false;
+        }
+    }
+    
+    public boolean form2(HttpServletRequest request){
+        try{
                 ArrayList<TableColumns> tc= new ArrayList<TableColumns>();
                 tc.add(new TableColumns("String", request.getParameter("HPAD_AGENCY_SNO")));
                 tc.add(new TableColumns("String", request.getParameter("HPAD_PHA_CODE")));

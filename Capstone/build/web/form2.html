@@ -3,41 +3,161 @@
 <link rel="stylesheet" href="css/form.css" /> 
 <link rel="stylesheet" href="css/jquery-ui.css">
 <script src="js/jquery-2.1.0.min.js"></script>
-<script src="js/form2.js"></script>
 <script src="js/form.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
-
+<script src="js/form1.js"></script>
 </head>
 <body>	
 <h2>Application Form</h2>
 <h4>Step 2 out of 4</h4>	
-<h4>Household</h4>	
+<h4>Agency and Action</h4>	
 
-<form id="form2" name="form2" action="form3.html" method="post">
-<div id="members"></div>
+<form id="form2" name="form2" action="Form?num=2" method="post">
+<div class="element">
+<div class="left">Agency Name</div>
+<div class="right"><input type="text" name="agencyName"></div>
+</div>
 
 <div class="element">
-<div class="left">&nbsp;</div>
-<div class="right"><a id="removeMember">Remove member</a>&nbsp;&nbsp;<a id="addAnotherMember">Add another member</a></div>
+<div class="left">PHA Code</div>
+<div class="right"><input type="text" name="phaCode"></div>
 </div>
+
 <div class="element">
-<div class="left">Total Number in Household</div>
-<div class="right"><input type="text" name="totalNumberInHousehold" disabled value="1"></div>
-</div>
-<div class="element">
-<div class="left">Eligible Effective Date</div>
+<div class="left">Program</div>
 <div class="right">
-<input type="text" name="eligibleEffectiveDate" class="datepicker">
+<select name="program">
+  <option value="Public Housing">Public Housing</option>
+  <option value="Certificates">Certificates</option>
+  <option value="Vouchers">Vouchers</option>
+  <option value="Mod Rehab">Mod Rehab</option>
+</select>
 </div>
 </div>
+
+<!-- start of rule 1 -->
+<div id="rule1">
 <div class="element">
-<div class="left">If new head of household, former head of household's SSN</div>
-<div class="right"><input type="text" name="formerHeadOfHouseholdSSN"></div>
+<div class="left">Project Number</div>
+<div class="right"><input type="text" name="projectNumber"></div>
 </div>
+
 <div class="element">
-<div class="left">&nbsp;&nbsp;</div>
-<div class="right"><a href="form1.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 3"></div>
+<div class="left">Building Number</div>
+<div class="right"><input type="text" name="buildingNumber"></div>
+</div>
+
+<div class="element">
+<div class="left">Building Entrance Number</div>
+<div class="right"><input type="text" name="buildingEntranceNumber"></div>
+</div>
+
+<div class="element">
+<div class="left">Unit Number</div>
+<div class="right"><input type="text" name="unitNumber"></div>
+</div>
+</div>
+<!-- end of rule 1 -->
+
+
+<div class="element">
+<div class="left">Type of Action</div>
+<div class="right">
+<select name="typeOfAction">
+  <option value="New Admission">New Admission</option>
+  <option value="Annual Reexamination">Annual Reexamination</option>
+  <option value="Interim Reexamination">Interim Reexamination</option>
+  <option value="Portability Move-in (VO only)">Portability Move-in (VO only)</option>
+  <option value="Portability Move-out (VO only)">Portability Move-out (VO only)</option>
+  <option value="End Participation">End Participation</option>
+  <option value="FSS/WtW Addendum Only">FSS/WtW Addendum Only</option>
+  <option value="Annual Reexamination Searching (VO only)">Annual Reexamination Searching (VO only)</option>
+  <option value="Issuance of Voucher (VO only)">Issuance of Voucher (VO only)</option>
+  <option value="Expiration of Voucher (VO only)">Expiration of Voucher (VO only)</option>
+  <option value="Flat Rent Annual Update (PH only)">Flat Rent Annual Update (PH only)</option>
+  <option value="Annual HQS Inspection Only (S8 only)">Annual HQS Inspection Only (S8 only)</option>
+  <option value="Historical Adjustment">Historical Adjustment</option>
+  <option value="Void">Void</option>
+</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Effective date of Action</div>
+<div class="right">
+<input type="text" name="effectiveDateOfAction" class="datepicker">
+</div>
+</div>
+
+<div class="element">
+<div class="left">Correction</div>
+<div class="right">
+	<input type="radio" class="correction" name="correction" value="Yes">Yes<br>
+	<input type="radio" class="correction" name="correction" value="No">No</div>
+</div>
+</div>
+
+<!-- start of rule 2 -->
+<div id="rule2">
+<div class="element">
+<div class="left">Primary reason for correction</div>
+<div class="right">
+	<input type="radio" name="primaryReasonForCorrection" value="Family correction of income"><label id="familyCorrectionOfIncome">Family correction of income</label><br>
+	<input type="radio" name="primaryReasonForCorrection" value="Family correction(non-income)">Family correction(non-income)<br>
+	<input type="radio" name="primaryReasonForCorrection" value="PHA correction of family income">PHA correction of family income<br>
+	<input type="radio" name="primaryReasonForCorrection" value="PHA correction(non-income)">PHA correction(non-income)<br>
+</div>
+</div>
+</div>
+<!-- end of rule 2 -->
+
+<div class="element">
+<div class="left">Date of Admission to Program</div>
+<div class="right">
+<input type="text" name="dateOfAdmissionToProgram" class="datepicker">
+</div>
+</div>
+
+<div class="element">
+<div class="left">Projected Effective Date of Next Reexamination</div>
+<div class="right">
+<input type="text" name="projectedEffectiveDateOfNextReexamination" class="datepicker">
+</div>
+</div>
+
+<div class="element">
+<div class="left">Projected Date of Next Flat Rent Annual Update</div>
+<div class="right">
+<input type="text" name="projectedDateOfNextFlatRentAnnualUpdate" class="datepicker">
+</div>
+</div>
+
+<div class="element">
+<div class="left">FSS Participation now or in the last year</div>
+<div class="right">
+	<input type="radio" name="FSSParticipation" value="Yes"><label id="FSSParticipationYes">Yes</label><br>
+	<input type="radio" name="FSSParticipation" value="No">No</div>
+</div>
+</div>
+
+<!-- start of rule 3-->
+<div id="rule3" class="element">
+<div class="left">Special Program</div>
+<div class="right">
+	<input type="radio" name="specialProgram" value="Enhanced Voucher"><label id="enhancedVoucher">Enhanced Voucher</label><br>
+	<input type="radio" name="specialProgram" value="Welfare To Worker Voucher">Welfare to Worker Voucher</div>
+</div>
+</div>
+<!-- end of rule 3 -->
+
+<div class="element">
+<div class="left">Other Special Programs</div>
+<div class="right"><input type="text" name="otherSpecialPrograms"></div>
+</div>
+
+<div class="element">
+<div class="left"><input type="submit" value="Proceed to Step 2"></div>
 </div>
 </form>
 </body>
