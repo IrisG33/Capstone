@@ -1,0 +1,222 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="css/p8.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/form6.js"></script>
+<script src="js/form6.js"></script>
+</head>
+<body>
+	<h2>Calculation Tool</h2>
+	<h4>Step x out of x</h4>
+
+	<h2>
+		Housing Choice Vouchers: Teanant Based Vouchers
+		</h4>
+
+		<form id="p10" name="p10" action="p11.html" method="post">
+
+			<div class="element">
+				<div class="left">Number of bedrooms on Voucher</div>
+				<div class="right">
+					<input type="text" name="numberOfBedrooms">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Is the family now moving to this unit?</div>
+				<div class="right">
+					<input type="radio" name="moveToUnit" value="moveYes"><label
+						id="yesLabel">Yes</label> <input type="radio" name="moveToUnit"
+						value="moveNo"><label id="noLabel">No</label>
+				</div>
+			</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Does the family qualify as a Hard to House
+					family?</div>
+				<div class="right">
+					<input type="radio" name="isHard" value="Yes"><label
+						id="yesLabel">Yes</label> <input type="radio" name="isHard"
+						value="No"><label id="noLabel">No</label>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Did family move into your PHA jurisdiction
+					under portability?</div>
+				<div class="right">
+					<input type="radio" name="underPortability" value="Yes">Yes
+					<input type="radio" name="underPortability" value="No">No,
+					skip to 12g
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Cost billed per month(put 0 if absorbed)</div>
+				<div class="right">
+					<input type="text" name="costPerMonth" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Cost billed per month, put 0 if aborted</div>
+				<div class="right">
+					<input type="text" name="12e">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">PHA code billed</div>
+				<div class="right">
+					<input type="text" name="PHAcodeBilled" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Housing type</div>
+				<div class="right">
+					<input type="checkbox" name="housingType" value="groupHome">Group
+					Home (prorate gross rent)<br> <input type="checkbox"
+						name="hoousingType" valud="ownManufact">Own manufactured
+					home, lease space<br> <input type="checkbox" name="SRO"
+						value="SRO">SRO: 1 room occupied by 1 person<br>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Owner name</div>
+				<div class="right">
+					<input type="text" name="ownerName">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Owner TIN/SSN</div>
+				<div class="right">
+					<input type="text" name="ownerCode">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Payment standard for the family</div>
+				<div class="right">
+					<input type="text" name="paymentStandard" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Rent to owner</div>
+				<div class="right">
+					<input type="text" name="rent" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Utility allowance, if any</div>
+				<div class="right">
+					<input type="text" name="utilityAllow" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">
+					Gross rent of unit: $ <span id="12p">0.00</span>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">
+					Lower of payment standard for the family or gross rent of unit: & <span
+						id="12q">0.00</span>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">
+					TTP: $<span id="12r">0.00</span>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">
+					Total HAP: $<span id="12s">0.00</span>
+				</div>
+			</div>
+
+			<h4>Rent Calculation (if prorated rent, skip to section b)</h4>
+			<div class="element">
+				<div class="left">
+					Total family share: $<span id="12t">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					HAP to owner: $<span id="12u">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Tenant rent to owner: $<span id="12v">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Utility reimbursement to family: $<span id="12w">0.00</span>
+				</div>
+			</div>
+
+			<h4>Section b: Prorated Rent Calculation</h4>
+			<div class="element">
+				<div class="left">
+					Normal total HAP: $<span id="12ab"></span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Total number eligible:</div>
+				<div class="right">
+					<input type="text" name="totalNumEligible">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Total number in family:</div>
+				<div class="right">
+					<input type="text" name="totalNumInFamily">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Proration percentage: $<span id="12ae">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Prorated total HAP: $<span id="12af">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Mixed family total family contribution: $<span id="12ag">0.00</span>
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">
+					Utility allowance: $<span id="12ah"></span>
+				</div>
+			</div>
+			
+			<div class="element">
+				<div class="left">Mixed family tenant rent to owner: $<span id="12ai">0.00</span></div>
+			</div>
+			
+			<div class="element">
+				<div class="left">Prorated HAP to owner: $<span id="12aj">0.00</span></div>
+			</div>
+			<div class="left"><div class="right"><a href="p9.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+		</form>
+</body>
+</html>

@@ -1,0 +1,217 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="css/p5.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/p5.js"></script>
+</head>
+<body>	
+<h2>Calculation Tool</h2>
+<h4>Step x out of x</h4>	
+<h4>Asset</h4>	
+
+<form id="p5" name="p5" action="p6.html" method="post">
+<table align="left" class="fixed" id='assetTable'>
+      <thead>
+  		<col width="140px"/>
+  		<col width="40px"/>
+  		<col width="100px"/>
+  		<col width="140px"/>
+  		<col width="130px"/>
+  		<col width="140px"/>
+  		<tr>
+          <th align = "left">Family member name</th>
+          <th align = "left">No.</th>
+          <th align = "left">Type of asset</th>
+          <th align = "left">Calcultation (PHA use)</th>
+          <th align = "left">Cash value of asset</th>
+          <th align = "left">Anticipated Income</th>
+        </tr>
+      </thead>
+      <tbody>
+    		<col width="140px"/>
+    		<col width="40px"/>
+    		<col width="100px"/>
+    		<col width="140px"/>
+    		<col width="130px"/>
+    		<col width="140px"/>
+        <tr>
+          <td><input size = "21" type="text" name="familyMemberName"></td>
+          <td><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="typeOfAsset"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "18" type="text" name="cashValueOfAsset" placeholder="$"></td>
+          <td><input size = "18" type="text" name="anticipatedIncome" placeholder="$"></td>
+        </tr>
+        <tr>
+          <td><input size = "21" type="text" name="familyMemberName"></td>
+          <td><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="typeOfAsset"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "18" type="text" name="cashValueOfAsset" placeholder="$"></td>
+          <td><input size = "18" type="text" name="anticipatedIncome" placeholder="$"></td>
+        </tr>
+        <tr>
+          <td><input size = "21" type="text" name="familyMemberName"></td>
+          <td><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="typeOfAsset"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "18" type="text" name="cashValueOfAsset" placeholder="$"></td>
+          <td><input size = "18" type="text" name="anticipatedIncome" placeholder="$"></td>
+        </tr>
+        <tr>
+          <td><input size = "21" type="text" name="familyMemberName"></td>
+          <td><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="typeOfAsset"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "18" type="text" name="cashValueOfAsset" placeholder="$"></td>
+          <td><input size = "18" type="text" name="anticipatedIncome" placeholder="$"></td>
+        </tr>
+      </tbody>
+</table>
+<div class="element">
+<div class="left"><a id="removeItem" onclick="removeAssetRow()">Remove item</a>&nbsp;&nbsp;<a id="addAnotherItem" onclick="addAssetRow()">Add another item</a></div>
+</div>
+
+<div class="element">
+<div class="left_push">Column totals</div>
+<div class="right_define"><input type="text" name="cash_value_total" placeholder="$">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+<div class="element">
+<div class="left_push2">Passbook rate(written as decimal)</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+<div class="element">
+<div class="left_push2">Inputed asset income:</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+<div class="element">
+<div class="left_push2">Final asset income:</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+<div class="element"><hr></div>
+
+
+<h4>Income</h4>	
+
+<table class="fixed" align="left" id='IncomeTable'>
+    <thead>
+		<col width="140px"/>
+		<col width="40px"/>
+		<col width="100px"/>
+		<col width="140px"/>
+		<col width="100px"/>
+		<col width="140px"/>
+		<col width="160px"/>
+	    <tr>
+			<th align = "left">Family member name</th>
+		    <th align = "left"> No.</th>
+            <th align = "left">Income Code</th>
+            <th align = "left">Calcultation (PHA use)</th>
+            <th align = "left">Dollars per year</th>
+            <th align = "left">Income exclusions</th>
+            <th align = "left">Income after exclusions</th>
+        </tr>
+     </thead>
+     <tbody>
+ 	 	<col width="130px"/>
+ 	 	<col width="20px"/>
+ 	 	<col width="70px"/>
+ 	 	<col width="120px"/>
+ 	 	<col width="120px"/>
+ 	 	<col width="120px"/>
+ 	 	<col width="120px"/>
+		<tr>
+          <td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName"></td>
+          <td style="word-wrap:break-word;"><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="incomdeCode"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "13" type="text" name="dollarsPerYear" placeholder ="$"></td>
+          <td><input size = "20" type="text" name="incomeExclusions" placeholder ="$"></td>
+          <td><input size = "24" type="text" name="incomeAfterExclusions" placeholder ="$"></td>
+		</tr>
+		<tr>
+          <td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName"></td>
+          <td style="word-wrap:break-word;"><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="incomdeCode"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "13" type="text" name="dollarsPerYear" placeholder ="$"></td>
+          <td><input size = "20" type="text" name="incomeExclusions" placeholder ="$"></td>
+          <td><input size = "24" type="text" name="incomeAfterExclusions" placeholder ="$"></td>
+		</tr>
+		<tr>
+          <td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName"></td>
+          <td style="word-wrap:break-word;"><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="incomdeCode"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "13" type="text" name="dollarsPerYear" placeholder ="$"></td>
+          <td><input size = "20" type="text" name="incomeExclusions" placeholder ="$"></td>
+          <td><input size = "24" type="text" name="incomeAfterExclusions" placeholder ="$"></td>
+		</tr>
+		<tr>
+          <td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName"></td>
+          <td style="word-wrap:break-word;"><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="incomdeCode"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "13" type="text" name="dollarsPerYear" placeholder ="$"></td>
+          <td><input size = "20" type="text" name="incomeExclusions" placeholder ="$"></td>
+          <td><input size = "24" type="text" name="incomeAfterExclusions" placeholder ="$"></td>
+		</tr>
+		<tr>
+          <td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName"></td>
+          <td style="word-wrap:break-word;"><input size = "2" type="text" name="no"></td>
+          <td><input size = "13" type="text" name="incomdeCode"></td>
+          <td><input size = "21" type="text" name="calculation"></td>
+          <td><input size = "13" type="text" name="dollarsPerYear" placeholder ="$"></td>
+          <td><input size = "20" type="text" name="incomeExclusions" placeholder ="$"></td>
+          <td><input size = "24" type="text" name="incomeAfterExclusions" placeholder ="$"></td>
+		</tr>
+     </tbody>
+</table>
+</div>
+
+<div class="element">
+<div class="right">
+	<a id="removeItem" onclick="removeIncomeRow()">Remove item</a>
+	&nbsp;&nbsp;
+	<a id="addAnotherItem" onclick="addIncomeRow()">Add another item</a>
+</div>
+</div>
+
+<div class="element">
+<div class="left_push3">Column Total</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+
+<div class="element">
+<div class="left_push3">Reserved</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+<div class="element">
+<div class="left_push3">Total annual income:</div>
+<div class="right_define2">
+<input type="text" name="anticipated_income_total" placeholder="$"></div>
+</div>
+
+
+<div class="element">
+<div class="left"><div class="right"><a href="form3.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+</div>
+</form>
+</body>
+</html>

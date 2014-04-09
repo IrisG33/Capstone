@@ -1,0 +1,425 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="css/p17.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/form6.js"></script><script src="js/form6.js"></script>  
+</head>
+<body>	
+<h2>Calculation Tool</h2>
+<h4>Step 17 out of 18</h4>	
+
+<h2>17. Family Self-Sufficiency (FSS)/ Welfare to Work (WtW) Voucher Addendum</h4>	
+
+<form id="p13" name="p13" action="p14.html" method="post">
+
+<div class="element">
+<div class="left">Participate in special programs?(check all that apply)</div>
+<div class="right">
+	<input type="checkbox" name="specialProgram" value="fss">FSS
+	<input type="checkbox" name="specialProgram" value="vwv">Welfare to Work Voucher 
+</div>
+</div>
+
+<div class="element">
+<div class="left">FSS report category: (check no more than one)</div>
+<div class="right">
+	<select name="category">
+  	  <option value="Enrollment">Enrollment</option>
+  	  <option value="Progress">Progress</option>
+  	  <option value="Exit">Exit</option>
+  	  <option value="NotAvailable">Not Available</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">FSS effective date (mm/dd/yyyy) of action</div>
+<div class="right"><input type="text" name="effectiveDate"></div>
+</div>
+
+<div class="element">
+<div class="left">PHA code of PHA administering FSS contract</div>
+<div class="right"><input type="text" name="PHAcode"></div>
+</div>
+
+<div class="element">
+<div class="left">WtW report category (check no more than one)</div>
+<div class="right">
+	<select name="WtWcategory">
+  	  <option value="Enrollment">Enrollment</option>
+  	  <option value="Progress">Progress</option>
+  	  <option value="Exit">Exit</option>
+  	  <option value="NotAvailable">Not Available</option>
+	</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">WtW effective date (mm/dd/yyyy) of action</div>
+<div class="right"><input type="text" name="WtWdate"></div>
+</div>
+
+<div class="element">
+<div class="left">(1) PHA code of PHA that issued the WtW Voucher</div>
+<div class="right"><input type="text" name="phaCodeForWtW"></div>
+</div>
+
+<div class="element">
+<div class="left">(2) PHA code of PHA counting the family as enrolled in its WtW Voucher program(if different from (1)</div>
+<div class="right"><input type="text" name="contractRent" placeholder = "$"></div>
+</div>
+
+<h4>General information</h4>	
+<div class="element">
+<div class="left">(1) Current employment status of head of household. Check the box to indicate the head of household's employment status at the time addendum completed.</div>
+<div class="right">
+	<input type="radio" name="headStatus" value="fulltime">Full-time (32 hours per week or more)<br>
+	<input type="radio" name="headStatus" value="parttime">Part-time<br>
+	<input type="radio" name="headStatus" value="notEmployed">Not employed<br>
+</div>
+</div>
+
+<div class="element">
+<div class="left">(2) Date (mm//dd/yyyy) current employment began </div>
+<div class="right"><input type="text" name="employmentBeganDate"></div>
+</div>
+
+<div class="element">
+<div class="left">(3) Benefits in current employment: (check all that apply)</div>
+<div class="right">
+	<input type="checkbox" name="benefits" value="health">Health
+	<input type="checkbox" name="benefits" value="retirementAccount">Retirement account 
+	<input type="checkbox" name="benefits" value="other">Other 
+</div>
+</div>
+
+<div class="element">
+<div class="left">(4) Years of school completed by the head of household. Enter the highest grade of education or years of formal schooling the head of household completed at the time Addendum is submitted. (0-25)</div>
+<div class="right"><input type="text" name="YearsInEducation" placeholder = ""></div>
+</div>
+
+<div class="element">
+<div class="left">(5) Assistance received by the family: (check all that apply)</div>
+<div class="right">
+	<input type="checkbox" name="assistance" value="TANF">TANF Income Assistance </br>
+	<input type="checkbox" name="assistance" value="ga">General Assistance </br>
+	<input type="checkbox" name="assistance" value="fs">Food Stamps</br>
+	<input type="checkbox" name="assistance" value="mhip">Medicaid/Children's Health Insurance Program</br>
+	<input type="checkbox" name="assistance" value="ga">General Assistance </br>
+	<input type="checkbox" name="assistance" value="eitc">Earned Income Tax Credit</br>
+</div>
+</div>
+
+
+<div class="element">
+<div class="left">(6) Number of children receiving childcare services</div>
+<div class="right"><input type="text" name="NumofChildren" placeholder = ""></div>
+</div>
+
+<h4>Family services table (option for WtW Vourcher)</h4>
+<table align="left" class="fixed" id='familyService'>
+      <thead>
+  		<col width="60px"/>
+  		<col width="60px"/>
+  		<col width="60px"/>
+  		<col width="50px"/>
+  		<tr>
+          <th align = "left"></th>
+          <th align = "left">(1) </br> Need </th>
+          <th align = "left">(2) </br> Neet Met During Participation in Program </th>
+          <th align = "left">(3) </br> Service Provider</th>
+        </tr>
+      </thead>
+      <tbody>
+  		<col width="60px"/>
+  		<col width="60px"/>
+  		<col width="100px"/>
+  		<col width="50px"/>
+		<tr>
+    		<td>Education Training</td>
+    		<td>
+				<select name="ET">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="ET4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="ETSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>GED</td>
+    		<td>
+				<select name="GED">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="GED4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="GEDSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>High school</td>
+    		<td>
+				<select name="highSchool">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="HS4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="HSSP" placeholder = "">
+			</td>
+		</tr>	
+		<tr>
+    		<td>Post secondary</td>
+    		<td>
+				<select name="postSecondary">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="ps4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="psSP" placeholder = "">
+			</td>
+		</tr>	
+		<tr>
+    		<td>Vocational/Job training</td>
+    		<td>
+				<select name="vjt">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="vjt4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="vjtSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Job search/job placement</td>
+    		<td>
+				<select name="js">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="js4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="jsSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Job retention</td>
+    		<td>
+				<select name="jr">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="jr4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="jrSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Transportation</td>
+    		<td>
+				<select name="transportion">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="t4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="tSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Health services</td>
+    		<td>
+				<select name="hs">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="hs4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="hsSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Alcohol and other drug abuse prevention services</td>
+    		<td>
+				<select name="aod">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="aod4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="aodSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Mentoring</td>
+    		<td>
+				<select name="mentoring">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="m4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="mentoringSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Homeownership counseling</td>
+    		<td>
+				<select name="homeC">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="homeC4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="homeCSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Individual Development Account (IDA)</td>
+    		<td>
+				<select name="ida">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="ida4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="idaSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>Chind care</td>
+    		<td>
+				<select name="childCare">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="childCare4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="childCareSP" placeholder = "">
+			</td>
+		</tr>
+		<tr>
+    		<td>None</td>
+    		<td>
+				<select name="none">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		    </td>
+    		<td>
+				<select name="none4Met">
+  	 		   	<option value="y">Y</option>
+  	  		  	<option value="n">N</option>
+  	  	  		</select>
+		   	</td>
+			<td>
+				<input type="text" name="noneSP" placeholder = "">
+			</td>
+		</tr>
+      </tbody>
+</table>
+</br>
+</br>
+(3) Service provider codes:</br> P = PHA	D = DOL	grantee		PR = For profit entity		E = Employer
+</br>T = TANF agency	V = Voluntary organization		N = Nonprofit agency		C = Community college
+
+</br></br>
+<div class="element">
+<div class="left"><div class="right"><a href="p12.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+</div>
+</form>
+</body>
+</html>

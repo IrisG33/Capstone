@@ -1,0 +1,33 @@
+body{
+	font-family: Helvetica, Arial;
+	font-size:12px;
+	margin:50px;
+	}
+select{
+		width:120px; 
+		border:1px solid gray;
+	  }
+.element{
+	clear:both;
+	margin-bottom: 10px;
+	overflow:hidden;
+	}	
+.left{
+	width:200px;
+	display:block;
+	float: left;
+	}		
+.right{
+	width:500px;
+	display:block;
+	float: left;
+	}
+
+table.fixed { 
+	table-layout:fixed;	
+	width:1500px;
+	font-family: Helvetica, Arial;
+	font-size:12px;
+ }
+table.fixed th { overflow: hidden; }
+table.fixed td { overflow: hidden; }
