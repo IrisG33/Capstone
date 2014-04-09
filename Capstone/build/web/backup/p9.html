@@ -1,0 +1,188 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="css/p8.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/p9.js"></script>
+<script src="js/form6.js"></script><script src="js/form6.js"></script>  
+</head>
+<body>	
+<h2>Calculation Tool</h2>
+<h4>Step x out of x</h4>	
+
+<h2>Section 8: Project Based Certificates and Vouchers</h4>	
+
+<form id="p9" name="p9" action="p10.html" method="post">
+
+<div class="element">
+<div class="left">Is family now moving to this unit?</div>
+<div class="right">
+<select name="moving">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Did family move into your PHA jurisdiction under portability?</div>
+<div class="right">
+<select name="underP">
+  <option value="underP">Yes</option>
+  <option value="no">No</option>
+</select>
+</div>
+</div>
+
+<div id = "rule1">
+<div class="element">
+<div class="left">Cost billed per month(put 0 if absorbed)</div>
+<div class="right"><input type="text" name="costPerMonth" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">PHA code billed</div>
+<div class="right"><input type="text" name="PHAcode"></div>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Housing type:</div>
+<div class="right">
+	<input type="radio" name="housingType" value="groupHome">Group Home (prorate gross rent)
+	<input type="radio" name="housingType" value="SRO">SRO: 1 room occupied by 1 person
+</div>
+</div>
+
+<div class="element">
+<div class="left">Owner name</div>
+<div class="right"><input type="text" name="OwnerName"></div>
+</div>
+
+<div class="element">
+<div class="left">Owner TIN/SSN</div>
+<div class="right"><input type="text" name="OwnerCode"></div>
+</div>
+
+<div class="element">
+<div class="left">Contract rent to owner (if unit has other subsidy, put subsidized rent)</div>
+<div class="right"><input id = "11k" type="text" name="contractRent" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">Utility allowance, if any</div>
+<div class="right"><input id = "11m" type="text" name="utilityAllowance" placeholder = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">Gross rent of unit: </div>
+<div class="right"><input type="text" id = "11n" name="grossRent" placeholder = "$" value = "$" readonly = "readonly"></div>
+</div>
+
+<div class="element">
+<div class="left">TTP: copy from 9j </div>
+<div class="right"><input type="text" id = "11q" name="grossRent" placeholder = "$" value = "$"></div>
+</div>
+
+<h4>Section a: Rent Calculation (if prorated rent, skip to section b)</h4>	
+<div class="element">
+<div class="left">Total HAP: 11n minus 11q, if 11q is larger, put 0 </div>
+<div class="right"><input id = "11r" type="text" name="HAP" placeholder = "$" ></div>
+</div>
+<div class="element">
+<div class="left">Tenant rent: 11k minus 11r</div>
+</div>
+<div id ="rule2">
+<div class="element">
+<div class="left">Tenant rent: </div>
+<div class="right"><input type="text" id="11st" placeholder = "$" readonly = "readonly"></div>
+</div>
+</div>
+<div id ="rule3">
+<div class="element">
+<div class="left">Credit tenant: </div>
+<div class="right"><input type="text" id="11sr" placeholder = "$" readonly = "readonly"></div>
+</div>
+</div>
+
+<div class="element">
+<div class="left">HAP to owner: lower of 11k or 11r</div>
+<div class="right"><input type="text" id = "11t" name="toOwner" disabled value = "$"></div>
+</div>
+<div class="element">
+	
+<h4>Section b: Prorated Rent Calculation</h4>
+
+<div class="element">
+<div class="left">Normal total HAP: 11n minus 11q</div>
+<div class="right"><input type="text" id = "11aa" name="normalHAP" placeholder = "$" disabled value = "$"></div>
+</div>
+<div class="element">
+	
+<div class="element">
+<div class="left">Total number eligible</div>
+<div class="right"><input type="text" id = "11ae" name="numEligible"></div>
+</div>
+<div class="element">	
+	
+<div class="element">
+<div class="left">Total number in family</div>
+<div class="right"><input type="text" id = "11af" name="numInfamily"></div>
+</div>
+<div class="element">
+	
+	
+<div class="element">
+<div class="left">Proration percentage</div>
+<div class="right"><input type="text" id = "11ag" name="prorationPercent" disabled value = "$"></div>
+</div>
+<div class="element">
+	
+<div class="element">
+<div class="left">Prorated total HAP</div>
+<div class="right"><input type="text" id = "11ah" name="proratedTotalHAP" placeholder = "$" disabled value = "$"></div>
+</div>
+<div class="element">
+	
+<div class="element">
+<div class="left">Mixed family TTP</div>
+<div class="right"><input type="text" id = "11ai" name="familyTTP" placeholder = "$" disabled value = "$"></div>
+</div>
+<div class="element">
+	
+<div class="element">
+<div class="left">Utility allowance, copy from 11m</div>
+<div class="right"><input type="text" id = "11aj" name="utilityAllowance" placeholder = "$" disabled value = "$"></div>
+</div>
+
+<div class="element">
+<div class="left">Mixed family tenant rent:</div>
+</div>
+<div id ="rule4">
+<div class="element">
+<div class="left">Tenant rent: </div>
+<div class="right"><input type="text" id="11akt" placeholder = "$" readonly = "readonly"></div>
+</div>
+</div>
+<div id ="rule5">
+<div class="element">
+<div class="left">Credit tenant: </div>
+<div class="right"><input type="text" id="11akr" placeholder = "$" readonly = "readonly"></div>
+</div>
+</div>
+
+
+<div class="element">
+<div class="left">Prorated HAP to owner:</div>
+<div class="right"><input type="text" id = "11an" name="proratedToOwner" placeholder = "$" disabled value = "$"></div>
+</div>
+
+<div class="element">
+<div class="left"><div class="right"><a href="p8.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+</div>
+</form>
+</body>
+</html>
