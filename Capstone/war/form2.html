@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
 <head>
 <link rel="stylesheet" href="css/form.css" /> 
@@ -97,7 +96,7 @@
 	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="Yes">Yes<br>
 	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="No">No</div>
 </div>
-</div>
+
 
 <!-- start of rule 2 -->
 <div id="rule2">
@@ -140,7 +139,7 @@
 	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="Yes"><label id="FSSParticipationYes">Yes</label><br>
 	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="No">No</div>
 </div>
-</div>
+
 
 <!-- start of rule 3-->
 <div id="rule3" class="element">
@@ -148,7 +147,6 @@
 <div class="right">
 	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Enhanced Voucher"><label id="enhancedVoucher">Enhanced Voucher</label><br>
 	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Welfare To Worker Voucher">Welfare to Worker Voucher</div>
-</div>
 </div>
 <!-- end of rule 3 -->
 
@@ -167,174 +165,4 @@
 </div>
 </form>
 </body>
-=======
-<html>
-<head>
-<link rel="stylesheet" href="css/form.css" /> 
-<link rel="stylesheet" href="css/jquery-ui.css">
-<script src="js/jquery-2.1.0.min.js"></script>
-<script src="js/form.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/jquery.validate.js"></script>
-<script src="js/form2.js"></script>
-</head>
-<body>	
-<h2>Application Form</h2>
-<h4>Step 2 out of 4</h4>	
-<h4>Agency and Action</h4>	
-
-<form id="form2" name="form2" action="Form?num=2" method="post">
-<div class="element">
-<div class="left">Agency Name</div>
-<div class="right"><input type="text" name="HPAD_AGENCY_NAME"></div>
-</div>
-
-<div class="element">
-<div class="left">PHA Code</div>
-<div class="right"><input type="text" name="HPAD_PHA_CODE"></div>
-</div>
-
-<div class="element">
-<div class="left">Program</div>
-<div class="right">
-<select name="HPTBD_PRGM">
-  <option value="Public Housing">Public Housing</option>
-  <option value="Certificates">Certificates</option>
-  <option value="Vouchers">Vouchers</option>
-  <option value="Mod Rehab">Mod Rehab</option>
-</select>
-</div>
-</div>
-
-<!-- start of rule 1 -->
-<div id="rule1">
-<div class="element">
-<div class="left">Project Number</div>
-<div class="right"><input type="text" name="HPTBD_PROJECT_NUM"></div>
-</div>
-
-<div class="element">
-<div class="left">Building Number</div>
-<div class="right"><input type="text" name="HPTBD_BLD_NUM"></div>
-</div>
-
-<div class="element">
-<div class="left">Building Entrance Number</div>
-<div class="right"><input type="text" name="HPTBD_BLD_ENT_NUM"></div>
-</div>
-
-<div class="element">
-<div class="left">Unit Number</div>
-<div class="right"><input type="text" name="HPTBD_UNIT_NUM"></div>
-</div>
-</div>
-<!-- end of rule 1 -->
-
-
-<div class="element">
-<div class="left">Type of Action</div>
-<div class="right">
-<select name="HPAC_ACTION_TYPE">
-  <option value="New Admission">New Admission</option>
-  <option value="Annual Reexamination">Annual Reexamination</option>
-  <option value="Interim Reexamination">Interim Reexamination</option>
-  <option value="Portability Move-in (VO only)">Portability Move-in (VO only)</option>
-  <option value="Portability Move-out (VO only)">Portability Move-out (VO only)</option>
-  <option value="End Participation">End Participation</option>
-  <option value="FSS/WtW Addendum Only">FSS/WtW Addendum Only</option>
-  <option value="Annual Reexamination Searching (VO only)">Annual Reexamination Searching (VO only)</option>
-  <option value="Issuance of Voucher (VO only)">Issuance of Voucher (VO only)</option>
-  <option value="Expiration of Voucher (VO only)">Expiration of Voucher (VO only)</option>
-  <option value="Flat Rent Annual Update (PH only)">Flat Rent Annual Update (PH only)</option>
-  <option value="Annual HQS Inspection Only (S8 only)">Annual HQS Inspection Only (S8 only)</option>
-  <option value="Historical Adjustment">Historical Adjustment</option>
-  <option value="Void">Void</option>
-</select>
-</div>
-</div>
-
-<div class="element">
-<div class="left">Effective date of Action</div>
-<div class="right">
-<input type="text" name="HTPA_EFFECTIVE_DATE" class="datepicker">
-</div>
-</div>
-
-<div class="element">
-<div class="left">Correction</div>
-<div class="right">
-	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="Yes">Yes<br>
-	<input type="radio" class="correction" name="HTPA_IS_CORRECTED" value="No">No</div>
-</div>
-</div>
-
-<!-- start of rule 2 -->
-<div id="rule2">
-<div class="element">
-<div class="left">Primary reason for correction</div>
-<div class="right">
-	<input type="radio" name="HTPA_IF_CORRECTED" value="Family correction of income"><label id="familyCorrectionOfIncome">Family correction of income</label><br>
-	<input type="radio" name="HTPA_IF_CORRECTED" value="Family correction(non-income)">Family correction(non-income)<br>
-	<input type="radio" name="HTPA_IF_CORRECTED" value="PHA correction of family income">PHA correction of family income<br>
-	<input type="radio" name="HTPA_IF_CORRECTED" value="PHA correction(non-income)">PHA correction(non-income)<br>
-</div>
-</div>
-</div>
-<!-- end of rule 2 -->
-
-<div class="element">
-<div class="left">Date of Admission to Program</div>
-<div class="right">
-<input type="text" name="HTPA_ADMISSION_DATE" class="datepicker">
-</div>
-</div>
-
-<div class="element">
-<div class="left">Projected Effective Date of Next Reexamination</div>
-<div class="right">
-<input type="text" name="HTPA_PROJEFFECTIVE_DATE_REEXAM" class="datepicker">
-</div>
-</div>
-
-<div class="element">
-<div class="left">Projected Date of Next Flat Rent Annual Update</div>
-<div class="right">
-<input type="text" name="HTPA_PROJ_DATE_FLATRATE_UPDATE" class="datepicker">
-</div>
-</div>
-
-<div class="element">
-<div class="left">FSS Participation now or in the last year</div>
-<div class="right">
-	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="Yes"><label id="FSSParticipationYes">Yes</label><br>
-	<input type="radio" name="HTPA_FSS_PARTICIPATION" value="No">No</div>
-</div>
-</div>
-
-<!-- start of rule 3-->
-<div id="rule3" class="element">
-<div class="left">Special Program</div>
-<div class="right">
-	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Enhanced Voucher"><label id="enhancedVoucher">Enhanced Voucher</label><br>
-	<input type="radio" name="HTPA_SPECIAL_PROGRAMS" value="Welfare To Worker Voucher">Welfare to Worker Voucher</div>
-</div>
-</div>
-<!-- end of rule 3 -->
-
-<div class="element">
-<div class="left">Other Special Programs: Number 01</div>
-<div class="right"><input type="text" name="HTPA_OTHER_SPECIAL_PROGRAMS_1"></div>
-</div>
-
-<div class="element">
-<div class="left">Other Special Programs: Number 02</div>
-<div class="right"><input type="text" name="HTPA_OTHER_SPECIAL_PROGRAMS_2"></div>
-</div>
-
-<div class="element">
-<div class="left"><input type="submit" value="Proceed to Step 2"></div>
-</div>
-</form>
-</body>
->>>>>>> 0d7d387921e8cddfc220fc477ee69ba589f04f35
 </html>

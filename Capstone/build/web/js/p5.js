@@ -1,22 +1,33 @@
-$( document ).ready(function() {
-	var num = 0;
-	function addIncomeRow()
-	{ 	num += 1;
-		$('#IncomeTable').append('<tr><td style="word-wrap:break-word;"><input size = "21" type="text" name="familyMemberName').append(num).append('"></td><td style="word-wrap:break-word;"><input size = "2" type="text" name="no"').append(num).append('></td><td><input size = "13" type="text" name="incomdeCode"').append(num).append('></td><td><input size = "21" type="text" name="calculation"').append(num).append('></td><td><input size = "13" type="text" name="dollarsPerYear"').append(num).append(' placeholder ="$"></td><td><input size = "20" type="text" name="incomeExclusions"').append(num).append(' placeholder ="$"></td><td><input size = "24" type="text" name="incomeAfterExclusions"').append(num).append(' placeholder ="$"></td></tr>');
-	}
-
-
-});
-
-function removeIncomeRow()
+var num = 4;
+var numAsset = 4;
+function addIncomeRow()
 { 
-  $('#IncomeTable tr:last').remove();
+  $('#IncomeTable').append(htmlIncome);
+}
+function htmlIncome(){
+	var strVar="";
+	num += 1;
+	strVar += "<tr><td style=\"word-wrap:break-word;\"><input size = \"21\" type=\"text\" name=\"HTHFI_FAMILY_MEMBER_NAME"+num+"\"><\/td><td style=\"word-wrap:break-word;\"><input size = \"2\" type=\"text\" name=\"HTHFI_NUMBER"+num+"\"><\/td><td><input size = \"13\" type=\"text\" name=\"HTHFI_INCOME_CODE"+num+"\"><\/td><td><input size = \"13\" type=\"text\" name=\"HTHFI_DOLLARS_PER_YEAR"+num+"\" placeholder =\"$\"><\/td><td><input size = \"20\" type=\"text\" name=\"HTHFI_INCOME_EXCLUSIONS"+num+"\" placeholder =\"$\"><\/td><td><input size = \"24\" type=\"text\" name=\"HTHFI_INCOME_AFTER_EXCLUSIONS"+num+"\" placeholder =\"$\"><\/td><\/tr>";
+	return strVar;
+}
+function removeIncomeRow()
+{	
+	num -= 1;
+	$('#IncomeTable tr:last').remove();
 }
 function addAssetRow()
 { 
-  $('#assetTable').append('<tr><td><input size = "21" type="text" name="familyMemberName"></td><td><input size = "2" type="text" name="no"></td><td><input size = "13" type="text" name="typeOfAsset"></td><td><input size = "21" type="text" name="calculation"></td><td><input size = "18" type="text" name="cashValueOfAsset" placeholder="$"></td><td><input size = "18" type="text" name="anticipatedIncome" placeholder="$"></td></tr>');
+	numAsset += 1;
+	$('#assetTable').append(htmlAsset);
+
+}
+function htmlAsset(){
+	var strVar="";
+	strVar += "<tr><td><input size = \"21\" type=\"text\" name=\"HTHFA_FAMILY_MEMBER_NAME"+numAsset+"\"><\/td><td><input size = \"2\" type=\"text\" name=\"HTHFA_NUMBER"+numAsset+"\"><\/td><td><input size = \"13\" type=\"text\" name=\"HTHFA_ASSET_TYPE"+numAsset+"\"><\/td><td><input size = \"18\" type=\"text\" name=\"HTHFA_ASSET_CASH_VALUE"+numAsset+"\" placeholder=\"$\"><\/td><td><input size = \"18\" type=\"text\" name=\"HTHFA_ANTICIPATED_INCOME"+numAsset+"\" placeholder=\"$\"><\/td><\/tr>";
+	return strVar;
 }
 function removeAssetRow()
 { 
-  $('#assetTable tr:last').remove();
+	numAsset -= 1;
+  	$('#assetTable tr:last').remove();
 }

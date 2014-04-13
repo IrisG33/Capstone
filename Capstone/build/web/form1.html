@@ -23,7 +23,7 @@
 </div>
 <div class="element">
 <div class="left">Total Number in Household</div>
-<div class="right"><input type="text" name="HTH_TOTAL_MEMBERS" disabled value="1"></div>
+<div class="right"><input type="text" name="HTH_TOTAL_MEMBERS" readonly="readonly" value="1"></div>
 </div>
 <div class="element">
 <div class="left">Eligible Effective Date</div>
@@ -32,12 +32,66 @@
 </div>
 </div>
 <div class="element">
+<div class="left">Family subsidy status under Noncitizens Rule</div>
+<div class="right"><input type="text" name="HTH_FAMILY_SUBSIDY"></div>
+</div>
+<div class="element">
 <div class="left">If new head of household, former head of household's SSN</div>
 <div class="right"><input type="text" name="HTH_FORMER_HEAD_SSN"></div>
 </div>
 <div class="element">
 <div class="left">&nbsp;&nbsp;</div>
 <div class="right"><a href="form2.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 3"></div>
+</div>
+<div class="element">
+<div class="left">Date entered waiting list</div>
+<div class="right"><input type="text" name="HTD_DATE_WAIT_LIST" class="datepicker"></div>
+</div>
+
+<div class="element">
+<div class="left">Zip code before admission</div>
+<div class="right"><input type="text" name="HTD_ZIP"></div>
+</div>
+
+<div class="element">
+<div class="left">Homeless at admission</div>
+<div class="right">
+<select name="HTD_HOMELESS_AT_ADMIN">
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Does family qualify for admission over the very low-income limit? (vouchers only)</div>
+<div class="right">
+<select name="HTD_QUALIFY_LOW_INC_LIMIT">
+  <option value=""></option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Continuously assisted under the 1937 Housing Act?</div>
+<div class="right">
+<select name="HTD_ASSISTED_1937_ACT">
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+</div>
+
+<div class="element">
+<div class="left">Is there a HUD approved income targeting disregard?</div>
+<div class="right">
+<select name="HTD_HUD_APPROVED_INCOME">
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
 </div>
 </form>
 </body>
