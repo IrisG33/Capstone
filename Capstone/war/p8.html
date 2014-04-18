@@ -21,73 +21,73 @@
 
 <div class="element">
 <div class="left">TTP: copy from 9j</div>
-<div class="right"><input type="text" id="TTP" name ="TTP" class = "min" placeholder = "$"></div>
+<div class="right"><input type="text" id="TTP" name ="HTPHT_TTP" class = "min" placeholder = "$"></div>
 </div>
 
 <div class="element">
 <div class="left">Unit's flat rent</div>
-<div class="right"><input type="text" id="unitRent" name = "unitRent" placeholder = "$"></div>
+<div class="right"><input type="text" id="unitRent" name = "HTPHT_UNIT_FLAT_RENT" placeholder = "$"></div>
 </div>
 
 <h4>Section a: Income Based Rent Calculation (if prorated rent, skip to section b)</h4>	
 
 <div class="element">
 <div class="left">Income based ceiling rent, if any</div>
-<div class="right"><input type="text" id="ceilingRent" class = "min" placeholder = "$"></div>
+<div class="right"><input type="text" id="ceilingRent" name = "HTPHT_INCOME_BASED_CEILING_RENT" class = "min" placeholder = "$"></div>
 </div>
 
 <div class="element">
 <div class="left">Lower of TTP or income based ceiling rent (if no income based ceiling rent, put TTP)</div>
-<div class="right"><input type="text" id="lowRent" placeholder = "$" readonly = "readonly"></div>
+<div class="right"><input type="text" id="lowRent" name = "HTPHT_TTP_INCOME_BASED_CEILING_RENT" placeholder = "$" readonly = "readonly"></div>
 </div>
 
 <div class="element">
 <div class="left">Utility allowance, if any</div>
-<div class="right"><input type="text" id = "utilityAllowance" placeholder = "$"></div>
+<div class="right"><input type="text" id = "utilityAllowance" name = "HTPHT_UTILITY_ALLOWANCE" placeholder = "$"></div>
 </div>
 
 <div id ="rule1">
 <div class="element">
 <div class="left">Tenant rent: </div>
-<div class="right"><input type="text" id="tenantRent" placeholder = "$" readonly = "readonly"></div>
+<div class="right"><input type="text" id="tenantRent" name = "HTPHT_TENANT_RENT" placeholder = "$" readonly = "readonly"></div>
 </div>
 </div>
 
 <div id ="rule2">
 <div class="element">
 <div class="left">Credit tenant: </div>
-<div class="right"><input type="text" id="creditTenant" placeholder = "$" readonly = "readonly"></div>
+<div class="right"><input type="text" id="creditTenant" name = "HTPHT_TENANT_RENT" placeholder = "$" readonly = "readonly"></div>
 </div>
 </div>
 
 <h4>Section b: Income Based Prorated Rent Calculation (if not prorated, skip to section c)</h4>	
 <div class="element">
 <div class="left">Public Housing maximum rent </div>
-<div class="right"><input type="text" id = "10h" name="publichousingrent" placeholder = "$"></div>
+<div class="right"><input type="text" id = "10h" name="HTPHT_PR_HOUSE_MAX_RENT" placeholder = "$"></div>
 </div>
 <div class="element">
 <div class="left">Family maximum subsidy: </div>
-<div class="right"><input type="text" id = "10i" name="familysubsidy" readonly = "readonly" placeholder = "$" ></div>
+<div class="right"><input type="text" id = "10i" name="HTPHT_PR_FAMILY_MAX_SUBSIDY" readonly = "readonly" placeholder = "$" ></div>
 </div>
 <div class="element">
 <div class="left">Total number eligible </div>
-<div class="right"><input type="text" id = "10j" name="totalnumbereligible"></div>
+<div class="right"><input type="text" id = "10j" name="HTPHT_PR_TOT_NUM_ELIGIBLE"></div>
 </div>
 <div class="element">
 <div class="left">Total number in family </div>
-<div class="right"><input type="text" id = "10k" name="numFamily"></div>
+<div class="right"><input type="text" id = "10k" name="HTPHT_PR_TOT_NUM_FAMILY"></div>
 </div>
 <div class="element">
 <div class="left">Eligible subsidy </div>
-<div class="right"><input type="text" name="subsidy" id = "10n" readonly = "readonly" placeholder = "$" disabled value = "$"></div>
+<div class="right"><input type="text" name="HTPHT_PR_ELIGIBLE_SUBSIDY" id = "10n" readonly = "readonly" placeholder = "$" disabled value = "$"></div>
 </div>
 <div class="element">
 <div class="left">Mixed family TTP: </div>
-<div class="right"><input type="text" name="familyTTP" id = "10p" readonly = "readonly" placeholder = "$" disabled value = "$"></div>
+<div class="right"><input type="text" name="HTPHT_PR_MIXED_FAMILY_TTP" id = "10p" readonly = "readonly" placeholder = "$" disabled value = "$"></div>
 </div>
 <div class="element">
 <div class="left">Utility allowance, if any</div>
-<div class="right"><input type="text" id = "10r" name="utilityAllowance" placeholder = "$"></div>
+<div class="right"><input type="text" id = "10r" name="HTPHT_PR_UTILITY_ALLOWANCE" placeholder = "$"></div>
 </div>
 <div class="element">
 <div class="left">Mixed family tent rent: </div>
@@ -96,14 +96,14 @@
 <div id ="rule3">
 <div class="element">
 <div class="left">Tenant rent: </div>
-<div class="right"><input type="text" id="10st" placeholder = "$" readonly = "readonly"></div>
+<div class="right"><input name ="HTPHT_PR_MAX_FAMILY_RENT" type="text" id="10st" placeholder = "$" readonly = "readonly"></div>
 </div>
 </div>
 
 <div id ="rule4">
 <div class="element">
 <div class="left">Credit tenant: </div>
-<div class="right"><input type="text" id="10sr" placeholder = "$" readonly = "readonly"></div>
+<div class="right"><input name ="HTPHT_PR_MAX_FAMILY_RENT" type="text" id="10sr" placeholder = "$" readonly = "readonly"></div>
 </div>
 </div>
 
@@ -111,8 +111,8 @@
 <div class="element">
 <div class="left">Type of rent selected:</div>
 <div class="right">
-	<input type="radio" name="RentType" value="Income_based">Income based
-	<input type="radio" name="RentType" value="Flat">flat
+	<input type="radio" name="HTPHT_RENT_TYPE" value="Income_based">Income based
+	<input type="radio" name="HTPHT_RENT_TYPE" value="Flat">flat
 </div>
 </div>
 

@@ -24,28 +24,28 @@
 <div class="left">
 	(1) Initial start date (mm/yyyy) of contract of participation (FSS enrollment report only)
 </div>
-<div class="right"><input type="text" name="startDate"></div>
+<div class="right"><input type="text" name="HTFW_FSS_INITIAL_START_DATE"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(2) Initial end date (mm/yyyy) of contract of participation (FSS enrollment report only)
 </div>
-<div class="right"><input type="text" name="endDate"></div>
+<div class="right"><input type="text" name="HTFW_FSS_INITIAL_END_DATE"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(3) Contract date extended to (mm/yyyy) (if applicable)
 </div>
-<div class="right"><input type="text" name="extendDate"></div>
+<div class="right"><input type="text" name="HTFW_FSS_CONTRACT_DATE"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(4) Number of family members with Individual Traning and Services Plan 
 </div>
-<div class="right"><input type="text" name="extendDate"></div>
+<div class="right"><input type="text" name="HTFW_FSS_NO_FAMILY_MEMBERS"></div>
 </div>
 
 <div class="element">
@@ -53,7 +53,7 @@
 	(5) Did the family receive selection preference because of a FSS related service program participation? (FSS enrollment report only) (Y or N) 
 </div>
 <div class="right">
-	<select name="resultSelect">
+	<select name="HTFW_FSS_FAMILY_SELECTION_PREF">
    	<option value="y">Y</option>
   	<option value="n">N</option>
 	</select>
@@ -68,21 +68,21 @@
 <div class="left">
 	(1) Current FSS account monthly credit
 </div>
-<div class="right"><input type="text" name="monthCredit" placeholder = "$"></div>
+<div class="right"><input type="text" name="HTFW_FSS_CURRENT_ACCOUNT_MONTHLY_CREDIT" placeholder = "$"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(2) Current FSS account balance
 </div>
-<div class="right"><input type="text" name="accountBalance" placeholder = "$"></div>
+<div class="right"><input type="text" name="HTFW_FSS_CURRENT_ACCOUNT_BALANCE" placeholder = "$"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(3) FSS account amount disbursed to the family (cumulative as of end of reporting period) 
 </div>
-<div class="right"><input type="text" name="disbursement" placeholder = "$"></div>
+<div class="right"><input type="text" name="HTFW_FSS_AMOUNT_DISBURSED" placeholder = "$"></div>
 </div>
 
 <div class="element">
@@ -94,7 +94,7 @@
 	(1) Did family complete contract of participation? (Y or N) 
 </div>
 <div class="right">
-	<select name="completionofPartipation">
+	<select name="HTFW_FAMILY_CONTRACT_PARTICIPATION">
    	<option value="y">Y</option>
   	<option value="n">N</option>
 	</select>
@@ -106,7 +106,7 @@
 	(2) if (1) is Yes, did family move to homeownership? (Y or N) 
 </div>
 <div class="right">
-	<select name="completionofPartipation">
+	<select name="HTFW_FAMILY_HOMEOWNERSHIP">
    	<option value="y">Y</option>
   	<option value="n">N</option>
 	</select>
@@ -118,11 +118,11 @@
 	(3) if (1) is No, primary reason for exit: 
 </div>
 <div class="right">
-	<input type="checkbox" name="reason" value="lv">Left voluntarily </br>
-	<input type="checkbox" name="reason" value="pmo">Portability move-out </br>
-	<input type="checkbox" name="reason" value="ce">Contract expired but family did not fulfill obligations </br>
-	<input type="checkbox" name="reason" value="atl">Asked to leave program </br>
-	<input type="checkbox" name="reason" value="lbe">Left because essential servie was unavailable </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="lv">Left voluntarily </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="pmo">Portability move-out </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="ce">Contract expired but family did not fulfill obligations </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="atl">Asked to leave program </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="lbe">Left because essential servie was unavailable </br>
 </div>
 </div>
 
@@ -135,14 +135,14 @@
 <div class="left">
 	(1) Date (mm/dd/yyyy) Voucher issued (WtW enrollment report only)
 </div>
-<div class="right"><input type="text" name="VoucherstartDate"></div>
+<div class="right"><input type="text" name="HTFW_VOUCHER_ISSUED_DATE"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(2) Date (mm/dd/yyyy) of request for lease approval (RFLA) for a unit leased
 </div>
-<div class="right"><input type="text" name="requestDate"></div>
+<div class="right"><input type="text" name="HTFW_LEASE_APPROVAL_REQUEST_DATE"></div>
 </div>
 
 <div class="element">
@@ -154,7 +154,7 @@
 		(1) Is the family moving to homeownership? (Y or N)
 </div>
 <div class="right">
-	<select name="familyHomeownership">
+	<select name="HTFW_FAMILY_HOMEOWNERSHIP">
    	<option value="y">Y</option>
   	<option value="n">N</option>
 	</select>
@@ -166,12 +166,12 @@
 	(2) Primary reason for leaving the WtW Voucer program
 </div>
 <div class="right">
-	<input type="checkbox" name="reason4WtW" value="pm">Portability move-out </br>
-	<input type="checkbox" name="reason4WtW" value="fnl">Family no longer needs subsidy </br>
-	<input type="checkbox" name="reason4WtW" value="st">Subsidy terminated for Housing Choice Voucher program violation, other than WtW obligations</br>
-	<input type="checkbox" name="reason4WtW" value="stf">Subsidy terminated for violation of WtW obligations </br>
-	<input type="checkbox" name="reason4WtW" value="fv">Family voluntarily withdrew from Housing Choice Voucher program </br>
-	<input type="checkbox" name="reason4WtW" value="o">Other</br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="pm">Portability move-out </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="fnl">Family no longer needs subsidy </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="st">Subsidy terminated for Housing Choice Voucher program violation, other than WtW obligations</br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="stf">Subsidy terminated for violation of WtW obligations </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="fv">Family voluntarily withdrew from Housing Choice Voucher program </br>
+	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="o">Other</br>
 </div>
 </div>
 

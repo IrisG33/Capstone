@@ -22,15 +22,16 @@
 			<div class="element">
 				<div class="left">Number of bedrooms on Voucher</div>
 				<div class="right">
-					<input type="text" name="numberOfBedrooms">
+					<input type="text" name="HTPHHV_NO_BEDROOMS">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Is the family now moving to this unit?</div>
 				<div class="right">
-					<input type="radio" name="moveToUnit" value="moveYes"><label
-						id="yesLabel">Yes</label> <input type="radio" name="moveToUnit"
+					<input type="radio" name="HTPHHV_FAMILY_MOVING" value="moveYes"><label
+						id="yesLabel">Yes</label> 
+					<input type="radio" name="HTPHHV_FAMILY_MOVING"
 						value="moveNo"><label id="noLabel">No</label>
 				</div>
 			</div>
@@ -40,8 +41,8 @@
 				<div class="left">Does the family qualify as a Hard to House
 					family?</div>
 				<div class="right">
-					<input type="radio" name="isHard" value="Yes"><label
-						id="yesLabel">Yes</label> <input type="radio" name="isHard"
+					<input type="radio" name="HTPHHV_FAMILY_QUALIFY" value="Yes"><label
+						id="yesLabel">Yes</label> <input type="radio" name="HTPHHV_FAMILY_QUALIFY"
 						value="No"><label id="noLabel">No</label>
 				</div>
 			</div>
@@ -50,8 +51,8 @@
 				<div class="left">Did family move into your PHA jurisdiction
 					under portability?</div>
 				<div class="right">
-					<input type="radio" name="underPortability" value="Yes">Yes
-					<input type="radio" name="underPortability" value="No">No,
+					<input type="radio" name="HTPHHV_FAMILY_PHA_JURISDICTION" value="Yes">Yes
+					<input type="radio" name="HTPHHV_FAMILY_PHA_JURISDICTION" value="No">No,
 					skip to 12g
 				</div>
 			</div>
@@ -59,31 +60,31 @@
 			<div class="element">
 				<div class="left">Cost billed per month(put 0 if absorbed)</div>
 				<div class="right">
-					<input type="text" name="costPerMonth" placeholder="$">
+					<input type="text" name="HTPHHV_COST_BILLED" id = "12e" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Cost billed per month, put 0 if aborted</div>
 				<div class="right">
-					<input type="text" name="12e">
+					<input type="text" name="HTPHHV_COST_BILLED" id = "12e">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">PHA code billed</div>
 				<div class="right">
-					<input type="text" name="PHAcodeBilled" placeholder="$">
+					<input type="text" name="HTPHHV_PHA_CODE_BILLED" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Housing type</div>
 				<div class="right">
-					<input type="checkbox" name="housingType" value="groupHome">Group
+					<input type="checkbox" name="HTPHHV_HOUSING_TYPE" value="groupHome">Group
 					Home (prorate gross rent)<br> <input type="checkbox"
 						name="hoousingType" valud="ownManufact">Own manufactured
-					home, lease space<br> <input type="checkbox" name="SRO"
+					home, lease space<br> <input type="checkbox" name="HTPHHV_HOUSING_TYPE"
 						value="SRO">SRO: 1 room occupied by 1 person<br>
 				</div>
 			</div>
@@ -91,41 +92,41 @@
 			<div class="element">
 				<div class="left">Owner name</div>
 				<div class="right">
-					<input type="text" name="ownerName">
+					<input type="text" name="HTPHHV_OWNER_NAME">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Owner TIN/SSN</div>
 				<div class="right">
-					<input type="text" name="ownerCode">
+					<input type="text" name="HTPHHV_OWNER_TIN/SSN">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Payment standard for the family</div>
 				<div class="right">
-					<input type="text" name="paymentStandard" placeholder="$">
+					<input type="text" name="HTPHHV_PAYMENT_STANDARD" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Rent to owner</div>
 				<div class="right">
-					<input type="text" name="rent" placeholder="$">
+					<input type="text" name="HTPHHV_RENT_OWNER" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Utility allowance, if any</div>
 				<div class="right">
-					<input type="text" name="utilityAllow" placeholder="$">
+					<input type="text" name="HTPHHV_UTILITY_ALLOWANCE" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">
-					Gross rent of unit: $ <span id="12p">0.00</span>
+					Gross rent of unit: $ <span name = "HTPHHV_GROSS_RENT" id="12p">0.00</span>
 				</div>
 			</div>
 
