@@ -6,15 +6,29 @@
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
-<script src="js/form6.js"></script><script src="js/form6.js"></script>  
+<script src="js/form.js"></script>
+<script src="js/p14.js"></script>  
 </head>
 <body>	
 <h2>Calculation Tool</h2>
-<h4>Step 18 out of 18</h4>	
+<h4>Step 8 out of 8</h4>	
 
-<h2>Family Self-Sufficiency Program (if not in FSS Program, skip to next section)</h2>	
+<form id="rentCal8" name="rentCal8" action="Form?num=rentCal8" method="post">
+	
+<div class="element">
+<div class="left">The family is in the Family Self-Sufficiency Program</div>
+<div class="right">
+<select name="choice">
+  <option value="na">Please select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+</div>
+</div>
 
-<form id="p14" name="p14" action="p14.html" method="post">
+<div id = "fssp">
+<h2>Family Self-Sufficiency Program</h2>	
+
 
 <div class="element">
 <div class="left"><b>FSS Contract information</b></div>
@@ -24,21 +38,21 @@
 <div class="left">
 	(1) Initial start date (mm/yyyy) of contract of participation (FSS enrollment report only)
 </div>
-<div class="right"><input type="text" name="HTFW_FSS_INITIAL_START_DATE"></div>
+<div class="right"><input type="text" name="HTFW_FSS_INITIAL_START_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(2) Initial end date (mm/yyyy) of contract of participation (FSS enrollment report only)
 </div>
-<div class="right"><input type="text" name="HTFW_FSS_INITIAL_END_DATE"></div>
+<div class="right"><input type="text" name="HTFW_FSS_INITIAL_END_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(3) Contract date extended to (mm/yyyy) (if applicable)
 </div>
-<div class="right"><input type="text" name="HTFW_FSS_CONTRACT_DATE"></div>
+<div class="right"><input type="text" name="HTFW_FSS_CONTRACT_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
@@ -125,7 +139,9 @@
 	<input type="checkbox" name="HTFW_PRIMARY_REASON_EXIT" value="lbe">Left because essential servie was unavailable </br>
 </div>
 </div>
+</div>
 
+<div id = "wvpp">
 <h2>Welfare to Work Voucher Program</h2>	
 <div class="element">
 <div class="left"><b>WtW program information</b></div>
@@ -135,14 +151,14 @@
 <div class="left">
 	(1) Date (mm/dd/yyyy) Voucher issued (WtW enrollment report only)
 </div>
-<div class="right"><input type="text" name="HTFW_VOUCHER_ISSUED_DATE"></div>
+<div class="right"><input type="text" name="HTFW_VOUCHER_ISSUED_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
 <div class="left">
 	(2) Date (mm/dd/yyyy) of request for lease approval (RFLA) for a unit leased
 </div>
-<div class="right"><input type="text" name="HTFW_LEASE_APPROVAL_REQUEST_DATE"></div>
+<div class="right"><input type="text" name="HTFW_LEASE_APPROVAL_REQUEST_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
@@ -174,10 +190,10 @@
 	<input type="checkbox" name="HTFW_PRIMARY_REASON_LEAVING" value="o">Other</br>
 </div>
 </div>
-
+</div>
 
 <div class="element">
-<div class="left"><div class="right"><a href="p13.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Finish"></div>
+<div class="left"><div class="right"><a href="rentCal7.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Finish"></div>
 </div>
 
 </form>

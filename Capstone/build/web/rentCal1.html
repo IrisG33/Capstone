@@ -1,0 +1,311 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/p6.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/form.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/p6.js"></script>
+</head>
+<body>	
+<h2>Calculation Tool</h2>	
+<h4>Step 1 out of 8</h4>
+<h2>Expected Income Per Year</h2>	
+
+<form id="rentCal1" name="rentCal1" action="Form?num=rentCal1" method="post">
+<div class="element">
+<div class="left2">Total annual income:</div>
+<div class="right2">
+	<input type="text" id = "8a" name="HTPEI_TOT_ANNUAL_INCOME" placeholder = "$"></div>
+</div>
+
+<table align="left" class="fixed" id='assetTable'>
+      <thead>
+      <col width="140px"/>
+      <col width="40px"/>
+      <col width="250px"/>
+      <col width="250px"/>
+      <tr>
+          <th align = "left">Family member name</th>
+          <th align = "left">No.</th>
+          <th align = "left">Type of permission deduction</th>
+          <th align = "left">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+        <col width="140px"/>
+        <col width="40px"/>
+        <col width="250px"/>
+        <col width="250px"/>
+
+        <tr>
+          <td><select name="familyMemberName" >
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size="2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+
+        <tr>
+          <td><select name="familyMemberName" id="familyMemberName">
+                <option value="name1">name1</option>
+                <option value="name2">name2</option>
+                <option value="name3">name3</option>
+                <option value="name4">name4</option>
+              </select>
+          </td>
+          <td><input size = "2" type="text" id="no" name="no"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
+          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+        </tr>
+      </tbody>
+</table>
+<div class="left"><a id="removeItem" onclick="removeRow()">Remove item</a>&nbsp;&nbsp;<a id="addAnotherItem" onclick="addRow()">Add another item</a></div>
+</div>
+
+
+<div class="element"><hr></div>
+
+<div class = "element">
+<div class="left2">Total pemissible deductions: </div>
+<div class="right2">
+	<input type="text" id = "8e" name="8e" placeholder = "$"></div>
+</div>
+</div>
+
+<div class="element">
+<div class="left2">If head/spouse/co-head is under 62 and no family member is disabled?</div>
+<div class="right2">
+<select name="larger62">
+  <option value="na">Please select</option>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+</div>
+</div>
+
+<div id="aa">
+  <div class="element">
+	  <div class = "left2">Medical/disability threshold: </div>
+	  <div class = "right2">
+	  	<input type="text" id = "8f" name="HTPEI_MEDICAL THRESHOLD" placeholder = "$">
+	  </div>
+  </div>
+  <div class="element">
+  <div class="left2">If there is disability expenses</div>
+  <div class="right2">
+  <select name="expenses">
+    <option value="na">Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  </div>
+  </div>
+  
+  <div id = "rule2">
+ 	
+	<div class="element">
+	  <div class = "left2">Total annual unreimbursed disability assistance expense:</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8g" name="HTPEI_TOT_ANNUAL_UNREIMBURSED" placeholder = "$">
+	  </div>
+  	</div>
+	
+  	<div class="element">
+	  <div class = "left2">Maximum disability allowance: (same with above)</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8h" name="HTPEI_MAX_DISABILITY_ALLOWANCE" placeholder = "$">
+	  </div>
+  	</div>
+  	
+	<div class="element">
+	  <div class = "left2">Earnings possible by disability assistance expense:</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8i" name="HTPEI_EARNINGS_DISABILITY" placeholder = "$">
+	  </div>
+  	</div>
+  	
+	<div class="element">
+	  <div class = "left2">Allowable disability assistance expense: </div>
+	  <div class = "right2">
+	  	<input type="text" id = "8j" name="HTPEI_ALLOWABLE_DISABILITY_ALLOWANCE" placeholder = "$">
+	  </div>
+  	</div>
+  </div>
+  
+  <div class="element">
+	  <div class = "left2">Total annual unreimbursed medical expenses: </div>
+	  <div class = "right2">
+	  	<input type="text" id = "8k" name="HTPEI_TOT_ANNUAL_UNREIMBURSED_MEDICAL" placeholder = "$">
+	  </div>
+  </div>
+  <div class="element">
+	  <div class = "left2">Total annual disability assitance and medical expense:</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8m" name="HTPEI_TOT_ANNUAL_DISBILITY_ALOWANCE" placeholder = "$">
+	  </div>
+  </div>
+  <div class="element">
+	  <div class = "left2">Medical/disability assistance allowance:</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8n" name="HTPEI_MEDICAL_DIASABILITY_ALLOWANCE" placeholder = "$">
+	  </div>
+  </div>
+  <div class="element">
+	  <div class = "left2">Elderly/disability allowance:</div>
+	  <div class = "right2">
+	  	<input type="text" id = "8p" name="HTPEI_DISABILITY_ALLOWANCE" placeholder = "400">
+	  </div>
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Number of dependents:(people under 18, or with disability, or full-time student. Do not count head of household, spouse, co-head, foster child/adult, or live-in aide.)</div>
+  <div class = "right2">
+  	<input type="text" id = "8q" name="HTPEI_NO_OF_DEPENDENTS" placeholder = "$">
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Allowance per dependent:</div>
+  <div class = "right2">
+  	<input type="text" id = "8r" name="HTPEI_ALLOWANCE_PER_DEPENDENT" placeholder = "480">
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Dependent allowance:</div>
+  <div class = "right2">
+  	<input type="text" id = "8s" name="HTPEI_DEPENDENT_ALLOWANCE" placeholder = "$">
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Total annual unreimbursed childcare costs:</div>
+  <div class = "right2">
+  	<input type="text" id = "8t" name="HTPEI_TOT_ANNUAL_UNREIMBURSED_CHILDCARE" placeholder = "$">
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Total allowance:</div>
+  <div class = "right2">
+  	<input type="text" id = "8x" name="HTPEI_TOT_ALLOWANCES" placeholder = "$">
+  </div>
+</div>
+
+<div class="element">
+  <div class = "left2">Adjusted annual income:</div>
+  <div class = "right2">
+  	<input type="text" id = "8y" name="HTPEI_ADJUSTED_ANNUAL_INCOME" placeholder = "$">
+  </div>
+</div>
+
+<div class="element"><hr></div>
+
+<h4>Total Tenant Payment (TTP)</h4>	
+<div class="element">
+  <div class = "left2">Total monthly income:</div>
+  <div class = "right2">
+  	<input type="text" id = "9a" name="HTPEI_TOT_MONTHLY_INCOME" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">TTP if based on annual income: </div>
+  <div class = "right2">
+  	<input type="text" id = "9c" name="HTPEI_TTP_ANNUAL_INCOME" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Adjusted monthly income: </div>
+  <div class = "right2">
+  	<input type="text" id = "9d" name="HTPEI_ADJUSTED_MONTHLY_INCOME" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Percentage of adjusted monthly income: </div>
+  <div class = "right2">
+  	<input type="text" id = "9e" name="HTPEI_PER_ADJUSTED_MONTHLY_INCOME" placeholder = "0.3">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">TTP if based on adjusted annual income:</div>
+  <div class = "right2">
+  	<input type="text" id = "9f" name="HTPEI_TTP_AAI" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Welfare rent per month:</div>
+  <div class = "right2">
+  	<input type="text" id = "9g" name="HTPEI_WELFARE_RENT_MONTH" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Minimum rent:</div>
+  <div class = "right2">
+  	<input type="text" id = "9h" name="HTPEI_MINIMUM_RENT" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Enhanced Voucher minimum rent:</div>
+  <div class = "right2">
+  	<input type="text" id = "9i" name="HTPEI_ENHANCED_VOUCHER_MINIMUM_RENT" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">TTP:</div>
+  <div class = "right2">
+  	<input type="text" id = "9j" name="HTPEI_TTP_HOL" placeholder = "$">
+  </div>
+</div>
+<div class="element">
+  <div class = "left2">Most recent TTP: </div>
+  <div class = "right2">
+  	<input type="text" id = "9k" name="HTPEI_TTP_MR" placeholder = "$">
+  </div>
+</div>
+
+<div class="left">Qualify for minimum rent hardship exemption? </div>
+<div class="right">
+	<input type="radio" name="HTPEI_MIN_RENT_HARDSHIP" value="exemYes"><label id="yesLabel">Yes</label>
+	<input type="radio" name="HTPEI_MIN_RENT_HARDSHIP" value="exemNo"><label id="noLabel">No</label></div>
+</div>
+</div>
+<br>
+<div class="element">
+<div class="left">&nbsp;&nbsp;<input type="submit" value="Proceed to Step 2"></div>
+</div>
+</form>
+</body>
+</html>

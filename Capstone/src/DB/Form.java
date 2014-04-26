@@ -48,6 +48,7 @@ public class Form {
                     }
                     else{
                         new Insert().go("HUD_TENANT_HOUSEHOLD_FK", tc);
+                        System.out.println((String)request.getSession().getAttribute("HTH_SNO"));
                     }
                 }                
         return true;
@@ -66,10 +67,11 @@ public class Form {
                 //set the Table name here
                 String HPAD_SNO = new Insert().goAutoIncrement("HUD_PHA_AGENCY_DTLS", tc);    
                 ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();    
-                tc2.add(new TableColumns("Integer", HPAD_SNO+""));
+                tc2.add(new TableColumns("Integer", HPAD_SNO));
                 tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_PRGM")));
-                tc2.add(new TableColumns("String", request.getParameter("HPTBD_PROJECT_NUM")));
+                System.out.println("HPTBD_PROJECT_NUM:"+request.getParameter("HPTBD_PROJECT_NUM").trim());
+                tc2.add(new TableColumns("String", request.getParameter("HPTBD_PROJECT_NUM").trim()));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_BLD_NUM")));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_BLD_ENT_NUM")));
                 tc2.add(new TableColumns("String", request.getParameter("HPTBD_UNIT_NUM")));
@@ -133,7 +135,7 @@ public class Form {
             return false;
         }
     }
-    public boolean p5(HttpServletRequest request){
+    public boolean form4(HttpServletRequest request){
         try{
                 
                 ArrayList<TableColumns> tc= new ArrayList<TableColumns>();    
@@ -186,8 +188,10 @@ public class Form {
             return false;
         }
     }
+
+
     
-    public boolean p8(HttpServletRequest request){
+    public boolean rentCal2(HttpServletRequest request){
         try{
                 
                 ArrayList<TableColumns> tc= new ArrayList<TableColumns>(); 
@@ -215,7 +219,7 @@ public class Form {
         }
     }
     
-    public boolean p9(HttpServletRequest request){
+    public boolean rentCal3(HttpServletRequest request){
         try{
                 
                 ArrayList<TableColumns> tc= new ArrayList<TableColumns>(); 
@@ -250,6 +254,11 @@ public class Form {
         }
     }
     
+    
+    // steven
+    public boolean rentCal1(HttpServletRequest request){
+    return true;
+    }
     
 
 }

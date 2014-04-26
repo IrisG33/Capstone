@@ -6,18 +6,17 @@
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
-<script src="js/form6.js"></script>
-<script src="js/form6.js"></script>
+<script src="js/p10.js"></script>
 </head>
 <body>
 	<h2>Calculation Tool</h2>
-	<h4>Step x out of x</h4>
+	<h4>Step 4 out of 8</h4>
 
 	<h2>
 		Housing Choice Vouchers: Teanant Based Vouchers
 		</h4>
 
-		<form id="p10" name="p10" action="p11.html" method="post">
+		<form id="rentCal4" name="rentCal4" action="Form?num=rentCal4" method="post">
 
 			<div class="element">
 				<div class="left">Number of bedrooms on Voucher</div>
@@ -51,12 +50,16 @@
 				<div class="left">Did family move into your PHA jurisdiction
 					under portability?</div>
 				<div class="right">
-					<input type="radio" name="HTPHHV_FAMILY_PHA_JURISDICTION" value="Yes">Yes
-					<input type="radio" name="HTPHHV_FAMILY_PHA_JURISDICTION" value="No">No,
-					skip to 12g
+					<select name="HTPHHV_FAMILY_PHA_JURISDICTION">
+				  	  <option value="na">Please select</option>
+				  	  <option value="Yes">Yes</option>
+				  	  <option value="No">No</option>
+					</select>
 				</div>
+				
 			</div>
-
+			
+			<div id = "moved">
 			<div class="element">
 				<div class="left">Cost billed per month(put 0 if absorbed)</div>
 				<div class="right">
@@ -65,17 +68,11 @@
 			</div>
 
 			<div class="element">
-				<div class="left">Cost billed per month, put 0 if aborted</div>
-				<div class="right">
-					<input type="text" name="HTPHHV_COST_BILLED" id = "12e">
-				</div>
-			</div>
-
-			<div class="element">
 				<div class="left">PHA code billed</div>
 				<div class="right">
 					<input type="text" name="HTPHHV_PHA_CODE_BILLED" placeholder="$">
 				</div>
+			</div>
 			</div>
 
 			<div class="element">
@@ -106,117 +103,175 @@
 			<div class="element">
 				<div class="left">Payment standard for the family</div>
 				<div class="right">
-					<input type="text" name="HTPHHV_PAYMENT_STANDARD" placeholder="$">
+					<input type="text" id = "12j" name="HTPHHV_PAYMENT_STANDARD" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Rent to owner</div>
 				<div class="right">
-					<input type="text" name="HTPHHV_RENT_OWNER" placeholder="$">
+					<input type="text" id = "12k" name="HTPHHV_RENT_OWNER" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">Utility allowance, if any</div>
 				<div class="right">
-					<input type="text" name="HTPHHV_UTILITY_ALLOWANCE" placeholder="$">
+					<input type="text" id = "12m" name="HTPHHV_UTILITY_ALLOWANCE" placeholder="$">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">
-					Gross rent of unit: $ <span name = "HTPHHV_GROSS_RENT" id="12p">0.00</span>
+					Gross rent of unit: 
+				</div>
+				<div class="right">
+					<input type="text" name="HTPHHV_GROSS_RENT" placeholder="$" id="12p" readonly = "readonly">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">
-					Lower of payment standard for the family or gross rent of unit: & <span name = "HTPHHV_PAYMENT_STANDARD_GROSS_RENT" id="12q">0.00</span>
+					Lower of payment standard for the family or gross rent of unit:
+				</div>
+				<div class="right">
+					<input type="text" id="12q" name="HTPHHV_PAYMENT_STANDARD_GROSS_RENT" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">
-					TTP: $<span id="12r" name = "HTPHHV_TTP">0.00</span>
+					TTP: 
+				</div>
+				<div class="right">
+					<input type="text" id="12r" name="HTPHHV_TTP" placeholder="$" id="12p">
 				</div>
 			</div>
 
 			<div class="element">
 				<div class="left">
-					Total HAP: $<span id="12s" name = "HTPHHV_TOT_HAP">0.00</span>
+					Total HAP: 
+				</div>
+				<div class="right">
+					<input type="text" id="12s" name="HTPHHV_TOT_HAP" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
-
-			<h4>Rent Calculation (if prorated rent, skip to section b)</h4>
+			
+			<div class="element">
+				<div class="left">If prorated?</div>
+				<div class="right">
+					<select name="ifProrated">
+					  <option value="na">Please select</option>
+					  <option value="y">Yes</option>
+					  <option value="n">No</option>
+					</select>
+				</div>
+			</div>
+			
+			<div id = "nonproprated">
+			<h4>Rent Calculation</h4>
 			<div class="element">
 				<div class="left">
-					Total family share: $<span id="12t" name = "HTPHHV_TOT_FAMILY_SHARE">0.00</span>
+					Total family share: 
+				</div>
+				<div class="right">
+					<input type="text" id="12t" name="HTPHHV_TOT_FAMILY_SHARE" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					HAP to owner: $<span id="12u" name = "HTPHHV_HAP_OWNER">0.00</span>
+					HAP to owner:
+				</div>
+				<div class="right">
+					<input type="text" id="12u" name="HTPHHV_HAP_OWNER" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Tenant rent to owner: $<span id="12v" name = "HTPHHV_TENANT_RENT_OWNER">0.00</span>
+					Tenant rent to owner: 
+				</div>
+				<div class="right">
+					<input type="text" id="12v" name="HTPHHV_TENANT_RENT_OWNER" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Utility reimbursement to family: $<span id="12w" name = "HTPHHV_UTILITY_REIMBURSEMENT_FAMILY">0.00</span>
+					Utility reimbursement to family: 
+				</div>
+				<div class="right">
+					<input type="text" id="12w" name="HTPHHV_UTILITY_REIMBURSEMENT_FAMILY" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
-
+			</div>
+			
 			<h4>Section b: Prorated Rent Calculation</h4>
 			<div class="element">
 				<div class="left">
-					Normal total HAP: $<span id="12ab" name = "HTPHHV_PR_NORMAL_TOTAL_HAP"></span>
+					Normal total HAP:
+				</div>
+				<div class="right">
+					<input type="text" id="12ab" name="HTPHHV_PR_NORMAL_TOTAL_HAP" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">Total number eligible:</div>
 				<div class="right">
-					<input type="text" name="HTPHHV_PR_TOT_NO_ELIGIBLE">
+					<input type="text" id = "12ac" name="HTPHHV_PR_TOT_NO_ELIGIBLE">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">Total number in family:</div>
 				<div class="right">
-					<input type="text" name="HTPHHV_PR_TOT_NO_FAMILY">
+					<input type="text" id = "12ad" name="HTPHHV_PR_TOT_NO_FAMILY">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Proration percentage: $<span id="12ae" name = "HTPHHV_PR_PRORATION_PERCENTAGE">0.00</span>
+					Proration percentage: 
+				</div>
+				<div class="right">
+					<input type="text" id="12ae" name="HTPHHV_PR_PRORATION_PERCENTAGE" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Prorated total HAP: $<span id="12af" name = "HTPHHV_PR_PRORATED_TOT_HAP">0.00</span>
+					Prorated total HAP: 
+				</div>
+				<div class="right">
+					<input type="text" id="12af" name="HTPHHV_PR_PRORATED_TOT_HAP" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Mixed family total family contribution: $<span id="12ag" name = "HTPHHV_PR_MIXED_FAMILY_TTP">0.00</span>
+					Mixed family total family contribution: 
+				</div>
+				<div class="right">
+					<input type="text" id="12ag" name="HTPHHV_PR_MIXED_FAMILY_TTP" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			<div class="element">
 				<div class="left">
-					Utility allowance: $<span id="12ah" name = "HTPHHV_PR_UTILITY_ALLOWANCE"></span>
+					Utility allowance: 
+				</div>
+				<div class="right">
+					<input type="text" id="12ah" name="HTPHHV_PR_UTILITY_ALLOWANCE" placeholder="$" readonly = "readonly">
 				</div>
 			</div>
 			
 			<div class="element">
-				<div class="left">Mixed family tenant rent to owner: $<span id="12ai" name ="HTPHHV_PR_MIXED_FAMILY_TENANT_RENT">0.00</span></div>
+				<div class="left">Mixed family tenant rent to owner: </div>
+				<div class="right">
+					<input type="text" id="12ai" name="HTPHHV_PR_MIXED_FAMILY_TENANT_RENT" placeholder="$" readonly = "readonly">
+				</div>
 			</div>
 			
 			<div class="element">
-				<div class="left">Prorated HAP to owner: $<span id="12aj" name = "HTPHHV_PR_PRORATED_HAP_OWNER">0.00</span></div>
+				<div class="left">Prorated HAP to owner: </div>
+				<div class="right">
+					<input type="text" id="12aj" name="HTPHHV_PR_PRORATED_HAP_OWNER" placeholder="$" readonly = "readonly">
+				</div>
 			</div>
-			<div class="left"><div class="right"><a href="p9.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+			<div class="left"><div class="right"><a href="rentCal3.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 5"></div>
 		</form>
 </body>
 </html>

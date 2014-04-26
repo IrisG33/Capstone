@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="css/p8.css" />
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/p11.js"></script>
+</head>
+<body>
+<h2>Calculation Tool</h2>
+<h4>Step 5 out of 8</h4>	
+		
+		<form id="rentCal5" name="rentCal5" action="Form?num=rentCal5" method="post">
+			<h4>Section 8: Moderate Rehabilitation (Mod Rehab) </h4>
+			<div class="element">
+				<div class="left">HAP contract number</div>
+				<div class="right">
+					<input type="text" name="HTPHMR_HAP_CONTRACT_NO">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Mod Rehab SRO program for homeless?</div>
+				<div class="right">
+					<input type="radio" name="HTPHMR_MOD_REHAB_SRO_PROGRAM" value="yes"><label
+						id="yesLabel">Yes</label> <input type="radio" name="HTPHMR_MOD_REHAB_SRO_PROGRAM"
+						value="no"><label id="noLabel">No</label>
+				</div>
+			</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Mod Rehab SRO unit (not homeless program)?</div>
+				<div class="right">
+					<input type="radio" name="HTPHMR_MOD_REHAB_SRO_UNIT" value="yes"><label
+						id="yesLabel">Yes</label> <input type="radio" name="HTPHMR_MOD_REHAB_SRO_UNIT"
+						value="no"><label id="noLabel">No</label>
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Owner name</div>
+				<div class="right">
+					<input type="text" name="HTPHMR_OWNER_NAME">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Owner TIN/SSN</div>
+				<div class="right">
+					<input type="text" name="HTPHMR_OWNER_TIN_SSN">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Current base rent</div>
+				<div class="right">
+					<input type="text" id = "f13" name="HTPHMR_CURRENT_BASE_RENT" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Rehabilitation debt service</div>
+				<div class="right">
+					<input type="text" id = "g13" name="HTPHMR_REHAB_DEBT_SERVICE" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Contract rent to owner: </div>
+				<div class="right">
+					<input type="text" id = "h13" name="HTPHMR_CONTRACT_RENT_OWNER" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			
+			<div class="element">
+				<div class="left">Utility allowance, if any</div>
+				<div class="right">
+					<input type="text" id = "i13" ame="HTPHMR_UTILITY_ALLOWANCE" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">TTP: </div>
+				<div class="right">
+					<input type="text" id = "j13" name="HTPHMR_TTP" placeholder="$">
+				</div>
+			</div>
+			
+			<div class="element">
+				<div class="left">If prorated?</div>
+				<div class="right">
+					<select name="ifProrated">
+					  <option value="na">Please select</option>
+					  <option value="y">Yes</option>
+					  <option value="n">No</option>
+					</select>
+				</div>
+			</div>
+			<div id="nonproprated">
+				<h4>Rent Calculation</h4>
+				<div id = "trent" class="element">
+					<div class="left">Tenant rent: </div>
+					<div class="right">
+						<input type="text" id = "kt13" name="HTPHMR_TENANT_RENT" readonly = "readonly" placeholder="$">
+					</div>
+				</div>
+				<div id = "crent" class="element">
+					<div class="left">Credit tenant: </div>
+					<div class="right">
+						<input type="text" id = "kr13" name="HTPHMR_TENANT_RENT" readonly = "readonly" placeholder="$">
+					</div>
+				</div>
+				
+				<div class="element">
+					<div class="left">HAP to owner: </div>
+					<div class="right">
+						<input type="text" id = "m13" name="HTPHMR_HAP_OWNER" readonly = "readonly" placeholder="$">
+					</div>
+				</div>
+			</div>
+			
+			<h4>Prorated Rent Calculation</h4>
+			<div class="element">
+				<div class="left">
+					Gross rent of unit: 
+				</div>
+				<div class="right">
+					<input type="text" id = "p13" name="HTPHMR_PR_GROSS_RENT" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Normal total HAP:
+				</div>
+				<div class="right">
+					<input type="text" id = "q13" name="HTPHMR_PR_NORMAL_TOT_HAP" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Total number eligible:</div>
+				<div class="right">
+					<input type="text" id = "r13" name="HTPHMR_PR_TOT_NO_ELIGIBLE">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Total number in family:</div>
+				<div class="right">
+					<input type="text" id = "s13" name="HTPHMR_PR_TOT_NO_FAMILY">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Proration percentage: </div>
+				<div class="right">
+					<input type="text" id = "t13" name="HTPHMR_PR_PRORATION_PRCENTAGE" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+
+			<div class="element">
+				<div class="left">Prorated total HAP: </div>
+				<div class="right">
+					<input type="text" id = "u13" name="HTPHMR_PR_PRORATION_TOT_HAP" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Mixed family TTP:</div>
+				<div class="right">
+					<input type="text" id = "v13" name="HTPHMR_PR_MIXED_FAMILY_TTP" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Utility allowance: $</div>
+				<div class="right">
+					<input type="text" id = "w13" name="HTPHMR_PR_UTILITY_ALLOWANCE" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Mixed family tenant rent:</div>
+				<div class="right">
+					<input type="text" id = "x13" name="HTPHMR_PR_MIXED_FAMILY_TENANT_RENT" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			<div class="element">
+				<div class="left">Prorateed HAP to owner:</div>
+				<div class="right">
+					<input type="text" id = "z13" name="HTPHMR_PR_PRORATED_HAP_OWNER" readonly = "readonly" placeholder="$">
+				</div>
+			</div>
+			
+			<div class="left"><div class="right"><a href="p10.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 6"></div>
+		</form>
+	
+</body>
+</html>

@@ -45,22 +45,60 @@ public class Form extends HttpServlet {
             else if(request.getParameter("num").contentEquals("3"))
             {   
                 new DB.Form().form3(request);
-                response.sendRedirect("p5.html");
+                response.sendRedirect("form4.html");
             } 
             else if(request.getParameter("num").contentEquals("5"))
             {   
-                new DB.Form().p5(request);
-                response.sendRedirect("p6.html");
+                new DB.Form().form4(request);
+                response.sendRedirect("form5.html");
             }
-            else if(request.getParameter("num").contentEquals("8"))
+            
+
+            
+            
+            
+            
+            
+            else if(request.getParameter("num").contentEquals("rentCal1"))
             {   
-                new DB.Form().p8(request);
-                response.sendRedirect("p9.html");
+                new DB.Form().rentCal1(request);
+                response.sendRedirect("rentCal2.html");
             }
-            else if(request.getParameter("num").contentEquals("9"))
+            
+            else if(request.getParameter("num").contentEquals("rentCal2"))
             {   
-                new DB.Form().p9(request);
-                response.sendRedirect("p10.html");
+                new DB.Form().rentCal2(request);
+                response.sendRedirect("rentCal3.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal3"))
+            {   
+                new DB.Form().rentCal3(request);
+                response.sendRedirect("rentCal4.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal4"))
+            {   
+                new DB.Form_Steven().rentCal4(request);
+                response.sendRedirect("rentCal5.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal5"))
+            {   
+                new DB.Form_Steven().rentCal5(request);
+                response.sendRedirect("rentCal6.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal6"))
+            {   
+                new DB.Form_Shanshan().rentCal6(request);
+                response.sendRedirect("rentCal7.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal7"))
+            {   
+                new DB.Form_Shanshan().rentCal7(request);
+                response.sendRedirect("rentCal8.html");
+            }
+            else if(request.getParameter("num").contentEquals("rentCal8"))
+            {   
+                new DB.Form_Shanshan().rentCal8(request);
+                response.sendRedirect("rentCal9.html");
             }
             
         } finally {            

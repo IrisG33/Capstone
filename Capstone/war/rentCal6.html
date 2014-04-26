@@ -6,15 +6,16 @@
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
-<script src="js/form6.js"></script><script src="js/form6.js"></script>  
+<script src="js/form.js"></script>  
+<script src="js/p12.js"></script>  
 </head>
 <body>	
 <h2>Calculation Tool</h2>
-<h4>Step 16 out of 18</h4>	
+<h4>Step 6 out of 8</h4>	
 
 <h2>15. Homeownership Vouchers</h4>	
 
-<form id="p12" name="p12" action="p13.html" method="post">
+<form id="rentCal6" name="rentCal6" action="Form?num=rentCal6" method="post">
 
 <div class="element">
 <div class="left">Is family now moving to this home? (Y or N)</div>
@@ -28,20 +29,21 @@
 
 <div class="element">
 <div class="left">Date (mm/dd/yyyy) of initial HQS inspection</div>
-<div class="right"><input type="text" name="HTPHHO_HQS_INSPECTION_DATE"></div>
+<div class="right"><input type="text" name="HTPHHO_HQS_INSPECTION_DATE" class="datepicker"></div>
 </div>
 
 <div class="element">
-<div class="left">Did family move into your PHA jurisdiction under portability?? (Y or N)
-				  (if no, skip to 15f)</div>
+<div class="left">Did family move into your PHA jurisdiction under portability?? (Y or N)</div>
 <div class="right">
-	<select name="HTPHHO_FAMILY_PHA_JURISDICTION">
-   	<option value="y">Y</option>
+	<select id = "15c" name="HTPHHO_FAMILY_PHA_JURISDICTION">
+   	<option value="na">Please select</option>
+	<option value="y">Y</option>
   	<option value="n">N</option>
 	</select>
 </div>
 </div>
 
+<div id = "moveUnder">
 <div class="element">
 <div class="left">Cost billed per month (put 0 if absorbed)</div>
 <div class="right"><input type="text" name="HTPHHO_COST_BILLED" placeholder ="$"></div>
@@ -51,60 +53,61 @@
 <div class="left">PHA code billed</div>
 <div class="right"><input type="text" name="HTPHHO_PHA_CODE_BILLED"></div>
 </div>
+</div>
 
 <div class="element">
 <div class="left">Monthly homeownhership payment (PITI & MIP if applicable)</div>
-<div class="right"><input type="text" name="HTPHHO_MONTHLY_HOMEOWNERSHIP_PAYMENT" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15f" name="HTPHHO_MONTHLY_HOMEOWNERSHIP_PAYMENT" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Utility allowance</div>
-<div class="right"><input type="text" name="HTPHHO_UTLITY_ALLOWANCE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15g" name="HTPHHO_UTLITY_ALLOWANCE" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Monthly maintenance allowance</div>
-<div class="right"><input type="text" name="HTPHHO_MONTHLY_MAINTAIN_ALLOWANCE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15h" name="HTPHHO_MONTHLY_MAINTAIN_ALLOWANCE" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Monthly major repair/replacement allowance</div>
-<div class="right"><input type="text" name="HTPHHO_MONTHLY_REPAIR_ALLOWANCE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15i" name="HTPHHO_MONTHLY_REPAIR_ALLOWANCE" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Monthly Co-op/Condominium assesments</div>
-<div class="right"><input type="text" name="HTPHHO_MONTHLY_CON_ASSESSMENTS" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15j" name="HTPHHO_MONTHLY_CON_ASSESSMENTS" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Monthly principal and interest on debt for improvements, if any</div>
-<div class="right"><input type="text" name="HTPHHO_MONTHLY_PRINCIPAL_INTEREST" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15k" name="HTPHHO_MONTHLY_PRINCIPAL_INTEREST" placeholder ="$"></div>
 </div>
 
 <div class="element">
 <div class="left">Gross homeownership expense:</div>
-<div class="right"><input type="text" name="HTPHHO_GROSS_HOME_EXPENSE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15m" name="HTPHHO_GROSS_HOME_EXPENSE" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 <div class="element">
 <div class="left">Payment standard for family</div>
-<div class="right"><input type="text" name="HTPHHO_PAYMENT_STANDARD" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15n" name="HTPHHO_PAYMENT_STANDARD" placeholder ="$" ></div>
 </div>
 
 <div class="element">
 <div class="left">Lower expenses</div>
-<div class="right"><input type="text" name="HTPHHO_GROSS_PAYMENT_STANDARD" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15p" name="HTPHHO_GROSS_PAYMENT_STANDARD" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 <div class="element">
 <div class="left">TTP: copy from 9j</div>
-<div class="right"><input type="text" name="HTPHHO_TTP" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15q" name="HTPHHO_TTP" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 <div class="element">
 <div class="left">HAP: 15p minus 15q (if 15q is larger, put 0)</div>
-<div class="right"><input type="text" name="HTPHHO_HAP" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15r" name="HTPHHO_HAP" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 <div class="element">
@@ -112,7 +115,7 @@
 </div>
 <div class="element">
 <div class="left">Total family share: 15m minus 15r</div>
-<div class="right"><input type="text" name="HTPHHO_TOT_FAMILY_SHARE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15s" name="HTPHHO_TOT_FAMILY_SHARE" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 
@@ -121,32 +124,32 @@
 </div>
 <div class="element">
 <div class="left">Normal total HAP: copy from 15r</div>
-<div class="right"><input type="text" name="HTPHHO_PR_NORMAL_TOT_HAP" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15aa" name="HTPHHO_PR_NORMAL_TOT_HAP" placeholder ="$" readonly = "readonly"></div>
 </div>
 <div class="element">
 <div class="left">Total number eligible</div>
-<div class="right"><input type="text" name="HTPHHO_PR_TOT_NO_ELIGIBLE"></div>
+<div class="right"><input type="text" id = "15ab" name="HTPHHO_PR_TOT_NO_ELIGIBLE"></div>
 </div>
 <div class="element">
 <div class="left">Total number in family</div>
-<div class="right"><input type="text" name="HTPHHO_PR_TOT_NO_FAMILY"></div>
+<div class="right"><input type="text" id = "15ac" name="HTPHHO_PR_TOT_NO_FAMILY"></div>
 </div>
 <div class="element">
 <div class="left">Proration percentage:</div>
-<div class="right"><input type="text" name="HTPHHO_PR_PRORATION_PERCENTAGE"></div>
+<div class="right"><input type="text" id = "15ad" name="HTPHHO_PR_PRORATION_PERCENTAGE" readonly = "readonly"></div>
 </div>
 <div class="element">
 <div class="left">Prorated HAP:</div>
-<div class="right"><input type="text" name="HTPHHO_PR_PRORATED_HAP" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15ae" name="HTPHHO_PR_PRORATED_HAP" placeholder ="$" readonly = "readonly"></div>
 </div>
 <div class="element">
 <div class="left">Mixed family total family share:</div>
-<div class="right"><input type="text" name="HTPHHO_PR_MIXED_TOT_FAMILY_SHARE" placeholder ="$"></div>
+<div class="right"><input type="text" id = "15af" name="HTPHHO_PR_MIXED_TOT_FAMILY_SHARE" placeholder ="$" readonly = "readonly"></div>
 </div>
 
 </br></br>
 <div class="element">
-<div class="left"><div class="right"><a href="p11.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step x"></div>
+<div class="left"><div class="right"><a href="rentCal5.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 7"></div>
 </div>
 </form>
 </body>
