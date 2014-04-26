@@ -1,19 +1,19 @@
   $( document ).ready(function() {
 	
 	$('input[type=radio][name=HTUA_IS_MAILING_ADD_SAME]').change(function() {
-        if (this.value == 'Yes') {
-            $('input[name=mailingNumberAndStreet]').val($('input[name=occupiedNumberAndStreet]').val());
-			$('input[name=mailingApt]').val($('input[name=occupiedApt]').val());
-			$('input[name=mailingCity]').val($('input[name=occupiedCity]').val());
-			$('input[name=mailingState]').val($('input[name=occupiedState]').val());
-			$('input[name=mailingZip]').val($('input[name=occupiedZip]').val());
+        if (this.value == 'Y') {
+            $('input[name=HTUA_MAILING_NUMBERANDSTREET]').val($('input[name=HTUA_UNIT_NUMBERANDSTREET]').val());
+			$('input[name=HTUA_MAILING_APTNO]').val($('input[name=HTUA_UNIT_APTNO]').val());
+			$('input[name=HTUA_MAILING_CITY]').val($('input[name=HTUA_UNIT_CITY]').val());
+			$('input[name=HTUA_MAILING_STATE]').val($('input[name=HTUA_UNIT_STATE]').val());
+			$('input[name=HTUA_MAILING_ZIP]').val($('input[name=HTUA_UNIT_ZIP]').val());
         }
-        else if (this.value == 'No') {
-            $('input[name=mailingNumberAndStreet]').val('');
-			$('input[name=mailingApt]').val('');
-			$('input[name=mailingCity]').val('');
-			$('input[name=mailingState]').val('');
-			$('input[name=mailingZip]').val('');
+        else if (this.value == 'N') {
+            $('input[name=HTUA_MAILING_NUMBERANDSTREET]').val('');
+			$('input[name=HTUA_MAILING_APTNO]').val('');
+			$('input[name=HTUA_MAILING_CITY]').val('');
+			$('input[name=HTUA_MAILING_STATE]').val('');
+			$('input[name=HTUA_MAILING_ZIP]').val('');
         }
     });
 	
