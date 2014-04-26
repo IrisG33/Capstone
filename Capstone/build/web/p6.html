@@ -7,6 +7,7 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.validate.js"></script>
 <script src="js/p6.js"></script>
+<script src="js/p6_validate.js"></script>
 </head>
 <body>	
 <h2>Application Form</h2>	
@@ -14,7 +15,7 @@
 
 <form id="p6" name="p6" action="p8.html" method="post">
 <div class="element">
-<div class="left">Total annual income: $9999.00</div>
+<div class="left">Total annual income: $ <span id="totalAnnualIncome" name = "HTPEI_TOT_ANNUAL_INCOME">9999.00</span></div>
 </div>
 <table align="left" class="fixed" id='assetTable'>
       <thead>
@@ -36,67 +37,70 @@
         <col width="250px"/>
 
         <tr>
-          <td><select name="familyMemberName" >
+          <td><select name="HTPFD_SNO_HOUSEHOLD_NAME" >
                 <option value="name1">name1</option>
                 <option value="name2">name2</option>
                 <option value="name3">name3</option>
                 <option value="name4">name4</option>
               </select>
           </td>
-          <td><input size = "2" type="text" id="no" name="no"></td>
-          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
-          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+          <td><input size = "2" type="text" id="no" name="HTPFD_NO"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="HTPFD_DEDUCTION_TYPE"></td>
+          <td><input class="amount" size = "21" type="text" name="HTPFD_AMOUNT" placeholder="$"></td>
         </tr>
 
         <tr>
-          <td><select name="familyMemberName" id="familyMemberName">
+          <td><select name="HTPFD_SNO_HOUSEHOLD_NAME" id="familyMemberName">
                 <option value="name1">name1</option>
                 <option value="name2">name2</option>
                 <option value="name3">name3</option>
                 <option value="name4">name4</option>
               </select>
           </td>
-          <td><input size = "2" type="text" id="no" name="no"></td>
-          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
-          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+          <td><input size = "2" type="text" id="no" name="HTPFD_NO"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="HTPFD_DEDUCTION_TYPE"></td>
+          <td><input class="amount" size = "21" type="text" name="HTPFD_AMOUNT" placeholder="$"></td>
         </tr>
 
         <tr>
-          <td><select name="familyMemberName" id="familyMemberName">
+          <td><select name="HTPFD_SNO_HOUSEHOLD_NAME" id="familyMemberName">
                 <option value="name1">name1</option>
                 <option value="name2">name2</option>
                 <option value="name3">name3</option>
                 <option value="name4">name4</option>
               </select>
           </td>
-          <td><input size="2" type="text" id="no" name="no"></td>
-          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
-          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+          <td><input size="2" type="text" id="no" name="HTPFD_NO"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="HTPFD_DEDUCTION_TYPE"></td>
+          <td><input class="amount" size = "21" type="text" name="HTPFD_AMOUNT" placeholder="$"></td>
         </tr>
 
         <tr>
-          <td><select name="familyMemberName" id="familyMemberName">
+          <td><select name="HTPFD_SNO_HOUSEHOLD_NAME" id="familyMemberName">
                 <option value="name1">name1</option>
                 <option value="name2">name2</option>
                 <option value="name3">name3</option>
                 <option value="name4">name4</option>
               </select>
           </td>
-          <td><input size = "2" type="text" id="no" name="no"></td>
-          <td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td>
-          <td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td>
+          <td><input size = "2" type="text" id="no" name="HTPFD_NO"></td>
+          <td><input size = "42" type="text" id="typeOfDeduction" name="HTPFD_DEDUCTION_TYPE"></td>
+          <td><input class="amount" size = "21" type="text" name="HTPFD_AMOUNT" placeholder="$"></td>
         </tr>
       </tbody>
 </table>
 
+<div class="left"><a id="removeItem" onclick="removeRow()">Remove item</a>&nbsp;&nbsp;<a id="addAnotherItem" onclick="addRow()">Add another item</a></div>
+</div>
+
 <div class="element"><hr></div>
 
-<div class="right"><h4>Total pemissible deductions: $<span id="8e">0.00</span></h4></div>
+<div class="right"><h4>Total pemissible deductions: <span id="e8">0.00</span></h4></div>
 
 <div class="element">
 <div class="left">If head/spouse/co-head is under 62? </div>
 <div class="right">
-<select name="larger62">
+<select name="under62">
   <option value="yes">Yes</option>
   <option value="no">No</option>
 </select>
@@ -105,7 +109,7 @@
 <div class="element">
 <div class="left">If head/spouse/co-head is disabled? </div>
 <div class="right">
-<select name="disable">
+<select name="disable" onchange>
   <option value="yes">Yes</option>
   <option value="no">No</option>
 </select>
@@ -113,46 +117,52 @@
 </div>
 
 <div id="rule1">
-  <div class="element">Medical/disability threshold: <span id="8f">$9999.00 X 0.03 = $299.97</span>
+  <div class="element">Medical/disability threshold: <span id="f8" name = "HTPEI_MEDICAL THRESHOLD"></span>
   </div>
 </div>
 
 <div id="rule4">
-  <div class="element">Total annual unreimbursed disabiity assistance expense: $<span id="annualUnreimbursedDisabExpense"><input type="text" id="8g"></span></div>
-  <div class="element">Maximum disability allowance: (same with above)<span id="8h"></span></div>
-  <div class="element">Earnings possible by disability assistance expense: <span id="8i">$0.00</span></div>
-  <div class="element">Allowable disability assistance expense: <span id="8j">$0.00</span></div>
-  <div class="element">Total annual unreimbursed medical expenses: <span id="8k">$0.00</span></div>
-  <div class="element">Total annual disability assitance and medical expense: <span id="8m">$0.00</span></div>
-  <div class="element">Medical/disability assistance allowance: <span id="8n">$0.00</span></div>
-  <div class="element">Elderly/disability allowance: $<input type="text" id="8p" name="edAllw" value="400.00"></div>
+  <div class="element">Total annual unreimbursed disability assistance expense: $<span id="HTPEI_TOT_ANNUAL_UNREIMBURSED"><input type="text" id="g8"></span></div>
+
+  <div id="rule3">
+    <div class="element">Maximum disability allowance: <span id="h8" name = "HTPEI_MAX_DISABILITY_ALLOWANCE" ></span></div>
+    <div class="element">Earnings possible by disability assistance expense: <span id="i8" name = "HTPEI_EARNINGS_DISABILITY">$0.00</span></div>
+    <div class="element">Allowable disability assistance expense: <span id="j8" name = "HTPEI_ALLOWABLE_DISABILITY_ALLOWANCE" >$0.00</span></div>
+  </div>
+  
+  <div id="rule2">
+    <div class="element">Total annual unreimbursed medical expenses: <span id="k8" name = "HTPEI_TOT_ANNUAL_UNREIMBURSED_MEDICAL">$0.00</span></div>
+    <div class="element">Total annual disability assitance and medical expense: <span id="m8" name = "HTPEI_TOT_ANNUAL_DISBILITY_ALOWANCE">$0.00</span></div>
+    <div class="element">Medical/disability assistance allowance: <span id="n8" name = "HTPEI_MEDICAL_DIASABILITY_ALLOWANCE">$0.00</span></div>
+    <div class="element">Elderly/disability allowance: $<input type="text" id="p8" name="HTPEI_DISABILITY_ALLOWANCE" value="400.00"></div>
+  </div>
 </div>
 
-<div class="element">Number of dependents: <span id="8q">0</span></div>
-<div class="element">Allowance/dependent: $<input type="text" id="8r" name="allwPerDpdt" value="480.00"></div>
-<div class="element">Dependent allowance: $<span id="8s">0.00</span></div>
-<div class="element">Total annual unreimbursed childcare costs: $<span id="8t">0.00</span></div>
-<div class="element">Total allowance: $<span id="8x">0.00</span></div>
-<div class="element">Adjusted annual income: $<span id="8q">0.00</span></div>
+<div class="element">Number of dependents: <span id="q8" name = "HTPEI_NO_OF_DEPENDENTS">0</span></div>
+<div class="element">Allowance/dependent: $<input type="text" id="r8" name="HTPEI_ALLOWANCE_PER_DEPENDENT" value="480.00"></div>
+<div class="element">Dependent allowance: $<span id="s8" name = "HTPEI_DEPENDENT_ALLOWANCE">0.00</span></div>
+<div class="element">Total annual unreimbursed childcare costs: $<input type="text" name="HTPEI_TOT_ANNUAL_UNREIMBURSED_CHILDCARE" id="t8"></div>
+<div class="element">Total allowance: $<span id="x8" name = "HTPEI_TOT_ALLOWANCES">0.00</span></div>
+<div class="element">Adjusted annual income: $<span id="y8" name = "HTPEI_ADJUSTED_ANNUAL_INCOME" >0.00</span></div>
 
 <div class="element"><hr></div>
 
 <h4>Total Tenant Payment (TTP)</h4>	
-<div class="element">Total monthly income: $ <span id="9a">0.00</span></div>
-<div class="element">TTP if based on annual income: $ <span id="9c">0.00</span></div>
-<div class="element">Adjusted monthly income $<span id="9d">0.00</span></div>
-<div class="element">Percentage of adjusted monthly income:<input type="text" id="9e" name="pctOfAdjIncome" value="30%"></div></div>
-<div class="element">TTP if based on adjusted annual income: $ <span id="9f">0.00</span></div>
-<div class="element">Welfare rent per month: $<span id="9g">0.00</span></div>
-<div class="element">Minimum rent: $ <span id="9h">0.00</span></div>
-<div class="element">Enhanced Voucher minimum rent: $ <span id="9i">0.00</span></div>
-<div class="element">TTP: $ <span id="9j">0.00</span></div>
-<div class="element">Most recent TTP: $ <span id="9k">0.00</span></div>
+<div class="element">Total monthly income: $ <span id="a9" name = "HTPEI_TOT_MONTHLY_INCOME">0.00</span></div>
+<div class="element">TTP if based on annual income: $ <span id="c9" name = "HTPEI_TTP_ANNUAL_INCOME">0.00</span></div>
+<div class="element">Adjusted monthly income $<span id="d9" name = "HTPEI_ADJUSTED_MONTHLY_INCOME">0.00</span></div>
+<div class="element">Percentage of adjusted monthly income:<input type="text" id="e9" name="HTPEI_PER_ADJUSTED_MONTHLY_INCOME" value="30%"></div></div>
+<div class="element">TTP if based on adjusted annual income: $ <span id="f9" name = "HTPEI_TTP_AAI">0.00</span></div>
+<div class="element">Welfare rent per month: $<span id="g9" name = "HTPEI_WELFARE_RENT_MONTH">0.00</span></div>
+<div class="element">Minimum rent: $ <span id="h9" name = "HTPEI_MINIMUM_RENT">0.00</span></div>
+<div class="element">Enhanced Voucher minimum rent: $ <span id="i9" name = "HTPEI_ENHANCED_VOUCHER_MINIMUM_RENT">0.00</span></div>
+<div class="element">TTP: $ <span id="j9" name = "HTPEI_TTP_HOL">0.00</span></div>
+<div class="element">Most recent TTP: $ <span id="k9" name = "HTPEI_TTP_MR">0.00</span></div>
 <div class="element">
 <div class="left">Qualify for minimum rent hardship exemption? </div>
 <div class="right">
-	<input type="radio" name="exemQualify" value="exemYes"><label id="yesLabel">Yes</label>
-	<input type="radio" name="exemQualify" value="exemNo"><label id="noLabel">No</label></div>
+	<input type="radio" name="HTPEI_MIN_RENT_HARDSHIP" value="exemYes"><label id="yesLabel">Yes</label>
+	<input type="radio" name="HTPEI_MIN_RENT_HARDSHIP" value="exemNo"><label id="noLabel">No</label></div>
 </div>
 </div>
 <br>

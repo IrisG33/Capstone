@@ -42,10 +42,25 @@ public class Form extends HttpServlet {
                 new DB.Form().form2(request);
                 response.sendRedirect("form3.html");
             } 
+            else if(request.getParameter("num").contentEquals("3"))
+            {   
+                new DB.Form().form3(request);
+                response.sendRedirect("p5.html");
+            } 
             else if(request.getParameter("num").contentEquals("5"))
             {   
                 new DB.Form().p5(request);
                 response.sendRedirect("p6.html");
+            }
+            else if(request.getParameter("num").contentEquals("8"))
+            {   
+                new DB.Form().p8(request);
+                response.sendRedirect("p9.html");
+            }
+            else if(request.getParameter("num").contentEquals("9"))
+            {   
+                new DB.Form().p9(request);
+                response.sendRedirect("p10.html");
             }
             
         } finally {            

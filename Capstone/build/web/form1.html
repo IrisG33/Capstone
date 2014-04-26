@@ -33,16 +33,20 @@
 </div>
 <div class="element">
 <div class="left">Family subsidy status under Noncitizens Rule</div>
-<div class="right"><input type="text" name="HTH_FAMILY_SUBSIDY"></div>
+<div class="right">
+<select name="HTH_FAMILY_SUBSIDY">
+  <option value="C">qualified for continuation of full assistance</option>
+  <option value="E">eligible for full assistance</option>
+  <option value="F">eligible for full assistance pending verification of status</option>
+  <option value="P">prorated assistance</option>
+</select>
+</div>
 </div>
 <div class="element">
 <div class="left">If new head of household, former head of household's SSN</div>
 <div class="right"><input type="text" name="HTH_FORMER_HEAD_SSN"></div>
 </div>
-<div class="element">
-<div class="left">&nbsp;&nbsp;</div>
-<div class="right"><a href="form2.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 3"></div>
-</div>
+
 <div class="element">
 <div class="left">Date entered waiting list</div>
 <div class="right"><input type="text" name="HTD_DATE_WAIT_LIST" class="datepicker"></div>
@@ -92,6 +96,10 @@
   <option value="No">No</option>
 </select>
 </div>
+</div>
+<div class="element">
+<div class="left">&nbsp;&nbsp;</div>
+<div class="right"><a href="form2.html">Back</a>&nbsp;&nbsp;<input type="submit" value="Proceed to Step 2"></div>
 </div>
 </form>
 </body>

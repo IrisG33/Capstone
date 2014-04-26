@@ -10,6 +10,7 @@ package DB;
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class Dbconnection 
 {
@@ -17,7 +18,11 @@ public class Dbconnection
     {       
                  try {       
                     Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
-                    Connection con= DriverManager.getConnection(Queries.getQuery("conString"),Queries.getQuery("dbUserName"),Queries.getQuery("dbPassword"));
+                    Properties jdbcProperties = new Properties();
+                    jdbcProperties.put("user", Queries.getQuery("dbUserName"));
+                    jdbcProperties.put("password", Queries.getQuery("dbPassword"));
+                    jdbcProperties.put("oracle.net.READ_TIMEOUT", "5000");
+                    Connection con= DriverManager.getConnection(Queries.getQuery("conString"),jdbcProperties);
                     return con;
                     } 
                 catch (Exception ex) 
