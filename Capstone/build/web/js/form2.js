@@ -10,8 +10,8 @@
 	$("select[name='HPTBD_PRGM']").on('change', function() {
 		$("#rule1").hide();
 		$("#rule3").hide();
-		if($(this).val()=="Public Housing") $("#rule1").show();
-		else if($(this).val()=="Vouchers") $("#rule3").show();
+		if($(this).val()=="P") $("#rule1").show();
+		else if($(this).val()=="VO") $("#rule3").show();
     });
 	
 	$("input:radio[name=HTPA_IS_CORRECTED]").click(function() {
@@ -20,42 +20,40 @@
     });
 	
 	//form validation on submit
-	$("#form1").validate({
+	$("#form2").validate({
 		//for radio buttons
 		errorPlacement: function(error, element) {
-			if (element.attr("name") == "FSSParticipation")  { error.insertAfter("#FSSParticipationYes"); }
-			else if (element.attr("name") == "specialProgram")  { error.insertAfter("#enhancedVoucher"); }
-			else if (element.attr("name") == "primaryReasonForCorrection")  { error.insertAfter("#familyCorrectionOfIncome"); }
+			if (element.attr("name") == "HTPA_FSS_PARTICIPATION")  { error.insertAfter("#FSSParticipationYes"); }
 			else { error.insertAfter(element); }
 		},
 		rules: {
-			agencyName: { required: true, maxlength: 10 },
-			effectiveDateOfAction: { required: true, maxlength: 10 },
-			dateOfAdmissionToProgram: { required: true, maxlength: 10 },
-			projectedEffectiveDateOfNextReexamination: { required: true, maxlength: 10 },
-			projectedDateOfNextFlatRentAnnualUpdate: { required: true, maxlength: 10 },
-			FSSParticipation: { required: true, maxlength: 10 },
-			phaCode: {
+			HPAD_AGENCY_NAME: { required: true, maxlength: 10 },
+			HTPA_EFFECTIVE_DATE: { required: true, maxlength: 10 },
+			HTPA_ADMISSION_DATE: { required: true, maxlength: 10 },
+			HTPA_PROJEFFECTIVE_DATE_REEXAM: { required: true, maxlength: 10 },
+			HTPA_PROJ_DATE_FLATRATE_UPDATE: { required: true, maxlength: 10 },
+			HTPA_FSS_PARTICIPATION: { required: true, maxlength: 10 },
+			HPAD_PHA_CODE: {
 				required: true,
 				minlength: 5, 
 				maxlength: 5
 			},
-			primaryReasonForCorrection:{ 
+			HTPA_IF_CORRECTED:{ 
 				required: { depends: function(element) {return $("input:radio[name=HTPA_IS_CORRECTED]").val() == "Yes";}},
 			},
-			projectNumber: {
+			HPTBD_PROJECT_NUM: {
 				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
 			},
-			buildingNumber: {
+			HPTBD_BLD_NUM: {
 				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
 			},
-			buildingEntranceNumber: {
+			HPTBD_BLD_ENT_NUM: {
 				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
 			},
-			unitNumber: {
+			HPTBD_UNIT_NUM: {
 				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Public Housing";}},
 			},
-			specialProgram: {
+			HTPA_SPECIAL_PROGRAMS: {
 				required: { depends: function(element) {return $("select[name='HPTBD_PRGM']").val() == "Vouchers";}},
 			},
 			},

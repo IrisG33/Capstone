@@ -7,17 +7,10 @@ package DB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author senthil.dexter
@@ -28,7 +21,6 @@ public class Insert {
         int columnNum=1;
         for (TableColumns tc: tcList) {
             try {
-           //    System.out.println(tc.value);
                 if(tc.datatype.contentEquals("String"))
                     stmt.setString(columnNum, tc.value);
                 else if(tc.datatype.contentEquals("Integer"))
@@ -57,26 +49,21 @@ public class Insert {
     
    
     
-    public String goAutoIncrement(String Query, ArrayList<TableColumns> tcList){
+    public String goAutoIncrement(String Query, ArrayList<TableColumns> tcList, String id){
         Connection con = null;
         String auto_id="";
         try
         {
             Dbconnection c = new Dbconnection(); 
-            con = c.getconn();       
-     /*       
-            
-Statement statement = con.createStatement();
-ResultSet rs1 = statement.executeQuery("SELECT SYSDATE FROM DUAL");
-while(rs1.next()) {
-System.out.println(rs1.getObject(1));
-}
-       */     
-            PreparedStatement stmt = con.prepareStatement(Queries.getQuery("insert_"+Query),1);
+            con = c.getconn();     
+            System.out.println("Table:"+Query);
+            PreparedStatement stmt = con.prepareStatement(Queries.getQuery("insert_"+Query),new String[] { id });
             stmt = setStatement(tcList, stmt);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            if(rs.next())  auto_id = rs.getString(1);
+            if(rs.next())  auto_id = Long.toString(rs.getLong(1));
+            System.out.println("FuckOFF:"+auto_id);
+            
             if (stmt != null) stmt.close();
 	}
         catch (Exception e){e.printStackTrace();}
