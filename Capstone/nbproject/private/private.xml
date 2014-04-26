@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/src/DB/Insert.java</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/war/p9.html</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/src/DB/Queries.java</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/src/edu/cmu/hudcapstone/Form.java</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/conf/queries.properties</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/war/form1.html</file>
-            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone/Capstone/src/DB/Form.java</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/src/DB/Form.java</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/src/DB/Dbconnection.java</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/conf/queries.properties</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/src/DB/TableColumns.java</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/src/edu/cmu/hudcapstone/Form.java</file>
+            <file>file:/Users/apple/Desktop/Capstone/Project/Capstone_May/Capstone/Capstone/src/DB/Form_Steven.java</file>
         </group>
     </open-files>
 </project-private>
