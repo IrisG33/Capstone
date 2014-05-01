@@ -145,7 +145,7 @@ public class Form {
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_PASSBOOK_RATE")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_IMPUTED_ASSET_INCOME")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_FINAL_ASSET_INCOME")));
-                String HTA_SNO=new Insert().goAutoIncrement("HUD_TENANT_ASSET", tc,"HTHFA_SNO");
+                String HTA_SNO=new Insert().goAutoIncrement("HUD_TENANT_ASSET", tc,"HTA_SNO");
                 int num=1;
                 while (true){
                     if(request.getParameter("HTHFA_FAMILY_MEMBER_NAME"+num)==null) break;                    
@@ -162,10 +162,17 @@ public class Form {
                 }
 
                 num=1;
+                ArrayList<TableColumns> tc3= new ArrayList<TableColumns>();    
+                tc3.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
+                tc3.add(new TableColumns("String", request.getParameter("HTI_TOTAL_INCOME_AFTER_EXCLS")));
+                tc3.add(new TableColumns("String", request.getParameter("HTI_RESERVED")));
+                tc3.add(new TableColumns("Integer", request.getParameter("HTI_TOTAL_ANNUAL_INCOME")));
+                String HTHFI_HTI_SNO= new Insert().goAutoIncrement("HUD_TENANT_INCOME", tc3, "HTI_SNO");
+                
                 while (true){
                     if(request.getParameter("HTHFI_FAMILY_MEMBER_NAME"+num)==null) break;                    
                     ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();                     
-                    tc2.add(new TableColumns("Integer", HTA_SNO));
+                    tc2.add(new TableColumns("Integer", HTHFI_HTI_SNO));
                     tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
                     tc2.add(new TableColumns("String", request.getParameter("HTHFI_FAMILY_MEMBER_NAME"+num)));
                     tc2.add(new TableColumns("String", request.getParameter("HTHFI_NUMBER"+num)));
@@ -176,12 +183,7 @@ public class Form {
                     new Insert().go("HUD_TENANT_HH_FAMILY_INCOME", tc2);
                     num++; 
                 }
-                ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();    
-                tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
-                tc2.add(new TableColumns("String", request.getParameter("HTI_TOTAL_INCOME_AFTER_EXCLS")));
-                tc2.add(new TableColumns("String", request.getParameter("HTI_RESERVED")));
-                tc2.add(new TableColumns("Integer", request.getParameter("HTI_TOTAL_ANNUAL_INCOME")));
-                new Insert().go("HUD_TENANT_INCOME", tc2);
+               
         return true;
         }
         catch(Exception ex){ ex.printStackTrace();
@@ -189,7 +191,37 @@ public class Form {
         }
     }
 
-
+    public boolean rentCal1(HttpServletRequest request){
+        try{
+             ArrayList<TableColumns> tc1 = new ArrayList<TableColumns>();
+             ArrayList<TableColumns> tc2 = new ArrayList<TableColumns>();
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_INCOME")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_SNO_HOUSEHOLD_NAME")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_DEDUCTION_TYPE")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_AMOUNT")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MEDICAL THRESHOLD")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MAX_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_EARNINGS_DISABILITY")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ALLOWABLE_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED_MEDICAL")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_DISBILITY_ALOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MEDICAL_DIASABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_NO_OF_DEPENDENTS")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ALLOWANCE_PER_DEPENDENT")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_DEPENDENT_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED_CHILDCARE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ALLOWANCES")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ADJUSTED_ANNUAL_INCOME")));
+             new Insert().go("HUD_TENANT_PHA_EXPECTED_INCOME", tc1);
+             new Insert().go("HUD_TENANT_PHA_FAMILY_DEDUCTIONS", tc2);   
+             return true;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
     
     public boolean rentCal2(HttpServletRequest request){
         try{
@@ -211,7 +243,7 @@ public class Form {
                 tc.add(new TableColumns("Integer", request.getParameter("HTPHT_PR_UTILITY_ALLOWANCE")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTPHT_PR_MAX_FAMILY_RENT")));
                 tc.add(new TableColumns("String", request.getParameter("HTPHT_RENT_TYPE")));
-                new Insert().go("HUD_TENANT_PHA_HOUSEHOLD_TURNKEYIII", tc);   
+                new Insert().go("HUD_TENANT_PHA_HH_TKEY", tc);   
         return true;
         }
         catch(Exception ex){ ex.printStackTrace();
@@ -253,11 +285,44 @@ public class Form {
             return false;
         }
     }
-    
-    
-    // steven
-    public boolean rentCal1(HttpServletRequest request){
-    return true;
+    public boolean rentCal4(HttpServletRequest request){
+        try{
+             ArrayList<TableColumns> tc = new ArrayList<TableColumns>();
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_NO_BEDROOMS")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_FAMILY_MOVING")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_FAMILY_QUALIFY")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_FAMILY_PHA_JURISDICTION")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_COST_BILLED")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_PHA_CODE_BILLED")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_HOUSING_TYPE")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_OWNER_NAME")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_OWNER_TIN/SSN")));
+             tc.add(new TableColumns("String", (String)request.getSession().getAttribute("HTPHHV_PAYMENT_STANDARD")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_RENT_OWNER")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_UTILITY_ALLOWANCE")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_GROSS_RENT")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PAYMENT_STANDARD_GROSS_RENT")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_TTP")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_TOT_HAP")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_TOT_FAMILY_SHARE")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_HAP_OWNER")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_TENANT_RENT_OWNER")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_UTILITY_REIMBURSEMENT_FAMILY")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_NORMAL_TOTAL_HAP")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_TOT_NO_ELIGIBLE")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_TOT_NO_FAMILY")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_PRORATION_PERCENTAGE")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_PRORATED_TOT_HAP")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_MIXED_FAMILY_TTP")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_UTILITY_ALLOWANCE")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_MIXED_FAMILY_TENANT_RENT")));
+             tc.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPHHV_PR_PRORATED_HAP_OWNER")));
+             new Insert().go("HUD_TENANT_PHA_HOUSEHOLD_HCV_VOUCHERS", tc);   
+             return true;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
     
 

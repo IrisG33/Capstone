@@ -32,33 +32,26 @@ public class Form extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            if(request.getParameter("num").contentEquals("1"))
+            if(request.getParameter("num").contentEquals("form1"))
             {   
                 new DB.Form().form1(request);
                 response.sendRedirect("form2.html");
             }
-            else if(request.getParameter("num").contentEquals("2"))
+            else if(request.getParameter("num").contentEquals("form2"))
             {   
                 new DB.Form().form2(request);
                 response.sendRedirect("form3.html");
             } 
-            else if(request.getParameter("num").contentEquals("3"))
+            else if(request.getParameter("num").contentEquals("form3"))
             {   
                 new DB.Form().form3(request);
                 response.sendRedirect("form4.html");
             } 
-            else if(request.getParameter("num").contentEquals("5"))
+            else if(request.getParameter("num").contentEquals("form4"))
             {   
                 new DB.Form().form4(request);
                 response.sendRedirect("form5.html");
             }
-            
-
-            
-            
-            
-            
-            
             else if(request.getParameter("num").contentEquals("rentCal1"))
             {   
                 new DB.Form().rentCal1(request);
@@ -77,12 +70,12 @@ public class Form extends HttpServlet {
             }
             else if(request.getParameter("num").contentEquals("rentCal4"))
             {   
-                new DB.Form_Steven().rentCal4(request);
+                new DB.Form().rentCal4(request);
                 response.sendRedirect("rentCal5.html");
             }
             else if(request.getParameter("num").contentEquals("rentCal5"))
             {   
-                new DB.Form_Steven().rentCal5(request);
+                new DB.Form_Shanshan().rentCal5(request);
                 response.sendRedirect("rentCal6.html");
             }
             else if(request.getParameter("num").contentEquals("rentCal6"))

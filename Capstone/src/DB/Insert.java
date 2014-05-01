@@ -24,7 +24,10 @@ public class Insert {
                 if(tc.datatype.contentEquals("String"))
                     stmt.setString(columnNum, tc.value);
                 else if(tc.datatype.contentEquals("Integer"))
-                    try{stmt.setInt(columnNum, Integer.parseInt(tc.value));}
+                    try{
+                        if(tc.value==null || tc.value.contentEquals(""))stmt.setInt(columnNum, 0);
+                        else stmt.setInt(columnNum, Integer.parseInt(tc.value));
+                    }
                     catch(Exception ex){stmt.setInt(columnNum, 0);}
                 else if(tc.datatype.contentEquals("Date"))               
                 {
