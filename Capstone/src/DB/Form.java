@@ -145,7 +145,7 @@ public class Form {
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_PASSBOOK_RATE")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_IMPUTED_ASSET_INCOME")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTA_FINAL_ASSET_INCOME")));
-                String HTA_SNO=new Insert().goAutoIncrement("HUD_TENANT_ASSET", tc,"HTHFA_SNO");
+                String HTA_SNO=new Insert().goAutoIncrement("HUD_TENANT_ASSET", tc,"HTA_SNO");
                 int num=1;
                 while (true){
                     if(request.getParameter("HTHFA_FAMILY_MEMBER_NAME"+num)==null) break;                    
@@ -162,10 +162,17 @@ public class Form {
                 }
 
                 num=1;
+                ArrayList<TableColumns> tc3= new ArrayList<TableColumns>();    
+                tc3.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
+                tc3.add(new TableColumns("String", request.getParameter("HTI_TOTAL_INCOME_AFTER_EXCLS")));
+                tc3.add(new TableColumns("String", request.getParameter("HTI_RESERVED")));
+                tc3.add(new TableColumns("Integer", request.getParameter("HTI_TOTAL_ANNUAL_INCOME")));
+                String HTHFI_HTI_SNO= new Insert().goAutoIncrement("HUD_TENANT_INCOME", tc3, "HTI_SNO");
+                
                 while (true){
                     if(request.getParameter("HTHFI_FAMILY_MEMBER_NAME"+num)==null) break;                    
                     ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();                     
-                    tc2.add(new TableColumns("Integer", HTA_SNO));
+                    tc2.add(new TableColumns("Integer", HTHFI_HTI_SNO));
                     tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
                     tc2.add(new TableColumns("String", request.getParameter("HTHFI_FAMILY_MEMBER_NAME"+num)));
                     tc2.add(new TableColumns("String", request.getParameter("HTHFI_NUMBER"+num)));
@@ -176,12 +183,7 @@ public class Form {
                     new Insert().go("HUD_TENANT_HH_FAMILY_INCOME", tc2);
                     num++; 
                 }
-                ArrayList<TableColumns> tc2= new ArrayList<TableColumns>();    
-                tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTH_SNO"))); 
-                tc2.add(new TableColumns("String", request.getParameter("HTI_TOTAL_INCOME_AFTER_EXCLS")));
-                tc2.add(new TableColumns("String", request.getParameter("HTI_RESERVED")));
-                tc2.add(new TableColumns("Integer", request.getParameter("HTI_TOTAL_ANNUAL_INCOME")));
-                new Insert().go("HUD_TENANT_INCOME", tc2);
+               
         return true;
         }
         catch(Exception ex){ ex.printStackTrace();
@@ -211,7 +213,7 @@ public class Form {
                 tc.add(new TableColumns("Integer", request.getParameter("HTPHT_PR_UTILITY_ALLOWANCE")));
                 tc.add(new TableColumns("Integer", request.getParameter("HTPHT_PR_MAX_FAMILY_RENT")));
                 tc.add(new TableColumns("String", request.getParameter("HTPHT_RENT_TYPE")));
-                new Insert().go("HUD_TENANT_PHA_HOUSEHOLD_TURNKEYIII", tc);   
+                new Insert().go("HUD_TENANT_PHA_HH_TKEY", tc);   
         return true;
         }
         catch(Exception ex){ ex.printStackTrace();

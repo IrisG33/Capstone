@@ -32,22 +32,22 @@ public class Form extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            if(request.getParameter("num").contentEquals("1"))
+            if(request.getParameter("num").contentEquals("form1"))
             {   
                 new DB.Form().form1(request);
                 response.sendRedirect("form2.html");
             }
-            else if(request.getParameter("num").contentEquals("2"))
+            else if(request.getParameter("num").contentEquals("form2"))
             {   
                 new DB.Form().form2(request);
                 response.sendRedirect("form3.html");
             } 
-            else if(request.getParameter("num").contentEquals("3"))
+            else if(request.getParameter("num").contentEquals("form3"))
             {   
                 new DB.Form().form3(request);
                 response.sendRedirect("form4.html");
             } 
-            else if(request.getParameter("num").contentEquals("5"))
+            else if(request.getParameter("num").contentEquals("form4"))
             {   
                 new DB.Form().form4(request);
                 response.sendRedirect("form5.html");
