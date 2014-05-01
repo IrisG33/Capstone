@@ -52,13 +52,6 @@ public class Form extends HttpServlet {
                 new DB.Form().form4(request);
                 response.sendRedirect("form5.html");
             }
-            
-
-            
-            
-            
-            
-            
             else if(request.getParameter("num").contentEquals("rentCal1"))
             {   
                 new DB.Form().rentCal1(request);
@@ -77,12 +70,12 @@ public class Form extends HttpServlet {
             }
             else if(request.getParameter("num").contentEquals("rentCal4"))
             {   
-                new DB.Form_Steven().rentCal4(request);
+                new DB.Form().rentCal4(request);
                 response.sendRedirect("rentCal5.html");
             }
             else if(request.getParameter("num").contentEquals("rentCal5"))
             {   
-                new DB.Form_Steven().rentCal5(request);
+                new DB.Form_Shanshan().rentCal5(request);
                 response.sendRedirect("rentCal6.html");
             }
             else if(request.getParameter("num").contentEquals("rentCal6"))
