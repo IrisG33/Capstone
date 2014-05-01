@@ -1,4 +1,5 @@
 var sign = false;
+var num = 5;
 $(document).ready(function() {	
 	$("#aa").hide();
 	$("#rule2").hide();
@@ -23,10 +24,14 @@ $(document).ready(function() {
 })
 function addRow()
 { 
-  $("#assetTable").append('<tr><td><select name="familyMemberName" id="familyMemberName"><option value="name1">name1</option><option value="name2">name2</option><option value="name3">name3</option><option value="name4">name4</option></select></td><td><input size = "2" type="text" id="no" name="no"></td><td><input size = "42" type="text" id="typeOfDeduction" name="typeOfDeduction"></td><td><input size = "21" type="text" id="amount" name="amount" placeholder="$"></td></tr>');
+   var strVar="";
+   strVar += "<tr><td><select name=\"HTPFD_SNO_HOUSEHOLD_NAME"+num+"\" id=\"familyMemberName\"><option value=\"name1\">name1<\/option><option value=\"name2\">name2<\/option><option value=\"name3\">name3<\/option><option value=\"name4\">name4<\/option><\/select><\/td><td><input size = \"2\" type=\"text\" id=\"no\" name=\"HTPFD_NO"+num+"\"><\/td><td><input size = \"42\" type=\"text\" id=\"typeOfDeduction\" name=\"HTPFD_DEDUCTION_TYPE"+num+"\"><\/td><td><input size = \"21\" type=\"text\" id=\"amount\" name=\"HTPFD_AMOUNT"+num+"\" placeholder=\"$\"><\/td><\/tr>";
+   $("#assetTable").append(strVar);
+   num++;
 }
 function removeRow()
 { 
   $("#assetTable tr:last").remove();
+  num--;
 }
 	
