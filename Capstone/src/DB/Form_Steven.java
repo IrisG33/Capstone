@@ -12,6 +12,38 @@ import javax.servlet.http.HttpServletRequest;
  * @author senthil.dexter
  */
 public class Form_Steven {
+    public boolean rentCal1(HttpServletRequest request){
+        try{
+             ArrayList<TableColumns> tc1 = new ArrayList<TableColumns>();
+             ArrayList<TableColumns> tc2 = new ArrayList<TableColumns>();
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_INCOME")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_SNO_HOUSEHOLD_NAME")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_DEDUCTION_TYPE")));
+             tc2.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPFD_AMOUNT")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MEDICAL THRESHOLD")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MAX_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_EARNINGS_DISABILITY")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ALLOWABLE_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED_MEDICAL")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_DISBILITY_ALOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_MEDICAL_DIASABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_DISABILITY_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_NO_OF_DEPENDENTS")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ALLOWANCE_PER_DEPENDENT")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_DEPENDENT_ALLOWANCE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ANNUAL_UNREIMBURSED_CHILDCARE")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_TOT_ALLOWANCES")));
+             tc1.add(new TableColumns("Integer", (String)request.getSession().getAttribute("HTPEI_ADJUSTED_ANNUAL_INCOME")));
+             new Insert().go("HUD_TENANT_PHA_EXPECTED_INCOME", tc1);
+             new Insert().go("HUD_TENANT_PHA_FAMILY_DEDUCTIONS", tc2);   
+             return true;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+    
     /**
      * 
      * @param request 
